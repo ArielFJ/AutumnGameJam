@@ -6,6 +6,8 @@ public class Mixer : MonoBehaviour
 {
     public string toolTipText;
 
+    public mixerSwitch Switch;
+
     public mixingBowl Bowl;
     public Transform bowlDestination;
 
@@ -27,13 +29,25 @@ public class Mixer : MonoBehaviour
 
     private void Update()
     {
+        if (!Bowl)
+        {
+            if (on)
+            {
+                on = false;
+                Switch.on = false;
+            }
+        }
+
         if (on)
         {
+            mixerAnim.SetBool("Up", false);
+            whiskAnim.SetBool("Spinning", true);
+
             Bowl.mixAmount += mixSpeed;
 
             foreach(MixEntry entry in allMixes)
             {
-                if( Bowl.mixAmount == entry.targetMixAmount)
+                if( Bowl.mixAmount == entry.targetMixAmount && Bowl.onPlate.Count == entry.Ingredients.Count)
                 {
                     bool falied = false;
 
@@ -72,7 +86,8 @@ public class Mixer : MonoBehaviour
         }
         else
         {
-
+            mixerAnim.SetBool("Up", true);
+            whiskAnim.SetBool("Spinning", false);
         }
     }
 }

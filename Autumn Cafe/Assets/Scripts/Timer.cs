@@ -22,6 +22,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         _originalMaxTime = MaxTime;
+        //StartTimer();
     }
 
     // Update is called once per frame
@@ -33,12 +34,10 @@ public class Timer : MonoBehaviour
     public void StartTimer()
     {
         ResetTimer();
-        ResumeTime();
+        IsRunning = true;
     }
 
     public void StopTimer() => IsRunning = false;
-
-    public void ResumeTime() => IsRunning = true;
 
     private void Tick()
     {
@@ -47,7 +46,7 @@ public class Timer : MonoBehaviour
         var deltaTime = Time.deltaTime;
         CurrentTime += IsTimeInverted ? -deltaTime : deltaTime;
 
-        if (CurrentTime > MaxTime || CurrentTime < 0) OnTimerTickFinished();
+        if (CurrentTime >= MaxTime || CurrentTime <= 0) OnTimerTickFinished();
     }
 
     private void OnTimerTickFinished()
@@ -68,12 +67,5 @@ public class Timer : MonoBehaviour
         }
     }
 
-    public void ResetMaxTime()
-    {
-        MaxTime = _originalMaxTime;
-        if (IsTimeInverted)
-        {
-            if (CurrentTime > MaxTime) CurrentTime = MaxTime; 
-        }
-    }
+    public void ResetMaxTime() => MaxTime = _originalMaxTime;
 }

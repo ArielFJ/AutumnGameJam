@@ -9,15 +9,15 @@ public class mixerSwitch : Interactible
 
     public override void interactFunction()
     {
-        if (on)
-        {
-            mixer.on = false;
-            on = false;
-        }
-        else
+        if (mixer.Bowl != null && mixer.on == false)
         {
             mixer.on = true;
             on = true;
+        }
+        else
+        {
+            mixer.on = false;
+            on = false;
         }
     }
 }
