@@ -75,7 +75,6 @@ public class CuttingBoard : Interactible
         knife.GetComponent<RadialKnifeController>().enabled = false;
         knife.GetComponent<KnifeController>().enabled = false;
         Cursor.lockState = CursorLockMode.Locked;
-        Debug.Log("stop interacting");
     }
 
     void enableRadialKnife()
