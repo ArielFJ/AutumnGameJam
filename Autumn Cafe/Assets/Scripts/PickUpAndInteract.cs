@@ -15,6 +15,7 @@ public class PickUpAndInteract : MonoBehaviour
     public LayerMask canPlace;
     public LayerMask InteractableMask;
     public LayerMask customerMask;
+    public LayerMask IgnoreRaycastLayerMask;
 
     public bool canInteract;
 
@@ -79,16 +80,19 @@ public class PickUpAndInteract : MonoBehaviour
                         tooltipText.color = new Color32(221, 119, 93, 200);
                     }
                 }
+                else if (Physics.Raycast(cam.position, cam.forward, out raycastHit, pickupDistance, IgnoreRaycastLayerMask))
+                {
+                    if (raycastHit.collider.tag == "Bowl")
+                    {
+                        tooltipText.text = "E: Put " + heldItem.GetComponent<Pickupable>().tooltipText + " In " + raycastHit.collider.GetComponent<Plate>().toolTipText;
+                        tooltipText.color = new Color32(221, 119, 93, 200);
+                    }
+                }
                 else if (Physics.Raycast(cam.position, cam.forward, out raycastHit, pickupDistance, canPickup))
                 {
                     if (raycastHit.collider.tag == "Plate")
                     {
                         tooltipText.text = "E: Put " + heldItem.GetComponent<Pickupable>().tooltipText + " On " + raycastHit.collider.GetComponent<Plate>().toolTipText;
-                        tooltipText.color = new Color32(221, 119, 93, 200);
-                    }
-                    else if (raycastHit.collider.tag == "Bowl")
-                    {
-                        tooltipText.text = "E: Put " + heldItem.GetComponent<Pickupable>().tooltipText + " In " + raycastHit.collider.GetComponent<Plate>().toolTipText;
                         tooltipText.color = new Color32(221, 119, 93, 200);
                     }
                 }
@@ -126,6 +130,11 @@ public class PickUpAndInteract : MonoBehaviour
                         tooltipText.text = "E: Pick Up " + toolHit.collider.gameObject.GetComponent<Pickupable>().tooltipText;
                         tooltipText.color = new Color32(221, 119, 93, 200);
                     }
+                }
+                else if (Physics.Raycast(cam.position, cam.forward, out toolHit, pickupDistance, IgnoreRaycastLayerMask))
+                {
+                    tooltipText.text = "E: Pick Up " + toolHit.collider.gameObject.GetComponent<Pickupable>().tooltipText;
+                    tooltipText.color = new Color32(221, 119, 93, 200);
                 }
                 else
                 {
@@ -188,6 +197,11 @@ public class PickUpAndInteract : MonoBehaviour
                 }
                 Grab();
             }
+            else if (Physics.Raycast(cam.position, cam.forward, out hit, pickupDistance, canPickup) && hit.collider.transform.parent && hit.collider.transform.parent.tag == "Bowl" && hit.collider.tag == "bowlHelper")
+            {
+                heldItem = hit.collider.transform.parent.gameObject;
+                Grab();
+            }
             else if (Physics.Raycast(cam.position, cam.forward, out hit, pickupDistance, canPickup))
             {
                 heldItem = hit.collider.gameObject;
@@ -203,7 +217,11 @@ public class PickUpAndInteract : MonoBehaviour
             }
             else if (Physics.Raycast(cam.position, cam.forward, out hit, pickupDistance, canPickup) && hit.collider.GetComponent<Plate>())
             {
-                PlaceOnPlate(hit.collider.gameObject);
+                PlaceOnPlate(hit.collider.gameObject, hit.point);
+            }
+            else if (Physics.Raycast(cam.position, cam.forward, out hit, pickupDistance, canPickup) && hit.collider.transform.parent.GetComponent<Plate>() && hit.collider.tag == "bowlHelper")
+            {
+                PlaceOnPlate(hit.collider.transform.parent.gameObject, hit.point);
             }
             else if (Physics.Raycast(cam.position, cam.forward, out hit, pickupDistance, canPlace) && hit.collider.gameObject.GetComponent<Mixer>() && heldItem.GetComponent<mixingBowl>())
             {
@@ -228,7 +246,7 @@ public class PickUpAndInteract : MonoBehaviour
             {
                 if (hit.normal == new Vector3(0, 1, 0))
                 {
-                    Place(hit.point);
+                    Place(hit.collider.gameObject,hit.point);
                 }
             }
         }
@@ -287,7 +305,7 @@ public class PickUpAndInteract : MonoBehaviour
         {
             heldItem.transform.parent.GetComponent<Plate>().onPlate.Remove(heldItem);
         }
-        if (heldItem.transform.parent && heldItem.transform.parent.GetComponent<Mixer>())
+        if (heldItem.transform.parent && heldItem.transform.root.GetComponent<Mixer>())
         {
             heldItem.transform.parent.GetComponent<Mixer>().Bowl = null;
             heldItem.GetComponent<mixingBowl>().mixAmount = 0;
@@ -297,6 +315,22 @@ public class PickUpAndInteract : MonoBehaviour
             heldItem.transform.parent.GetComponent<CoffeeStation>().cup = null;
             heldItem.GetComponent<cupController>().enabled = false;
         }
+        if (heldItem.GetComponent<mixingBowl>())
+        {
+            for(int i = 0; i < heldItem.transform.childCount; i++)
+            {
+                GameObject child = heldItem.transform.GetChild(i).gameObject;
+                if(child.tag == "bowlHelper")
+                {
+                    child.GetComponent<Collider>().enabled = false;
+                }
+            }
+            heldItem.GetComponent<Collider>().enabled = false;
+            heldItem.GetComponent<Rigidbody>().isKinematic = true;
+            heldItem.transform.position = dest.position;
+            heldItem.transform.parent = dest.gameObject.transform;
+            return;
+        }
         heldItem.GetComponent<Collider>().enabled = false;
         heldItem.GetComponent<Collider>().isTrigger = false;
         heldItem.GetComponent<Rigidbody>().isKinematic = true;
@@ -304,12 +338,34 @@ public class PickUpAndInteract : MonoBehaviour
         heldItem.transform.parent = dest.gameObject.transform;
     }
 
-    public void Place(Vector3 placePos)
+    public void Place(GameObject placingOn, Vector3 placingPoint)
     {
         heldItem.transform.parent = null;
-        heldItem.transform.position = placePos;
         heldItem.GetComponent<Rigidbody>().isKinematic = false;
+        if (heldItem.GetComponent<mixingBowl>())
+        {
+            for (int i = 0; i < heldItem.transform.childCount; i++)
+            {
+                GameObject child = heldItem.transform.GetChild(i).gameObject;
+                if (child.tag == "bowlHelper")
+                {
+                    child.GetComponent<Collider>().enabled = true;
+                }
+            }
+        }
         heldItem.GetComponent<Collider>().enabled = true;
+
+        float colliderBoundsY = placingOn.GetComponent<Collider>().bounds.size.y;
+        float colliderPositionY = placingOn.transform.position.y;
+        colliderPositionY += colliderBoundsY;
+
+        float heldObjectBoundsY = heldItem.GetComponent<Collider>().bounds.size.y;
+
+        heldObjectBoundsY += colliderPositionY;
+
+        Vector3 placePos = new Vector3(placingPoint.x, heldObjectBoundsY, placingPoint.z);
+
+        heldItem.transform.position = placePos;
         heldItem = null;
     }
 
@@ -327,22 +383,45 @@ public class PickUpAndInteract : MonoBehaviour
     public void PlaceInOven(BakingSlot slot)
     {
         heldItem.transform.parent = null;
-        heldItem.transform.position = slot.transform.position;
-        heldItem.transform.rotation = slot.transform.rotation;
         heldItem.GetComponent<Collider>().enabled = true;
+        heldItem.GetComponent<Collider>().isTrigger = true;
         slot.occupant = heldItem;
         heldItem.GetComponent<Bakeable>().slotOccupying = slot;
+
+        float heldObjectBoundsY = heldItem.GetComponent<Collider>().bounds.size.y;
+
+        heldObjectBoundsY += slot.transform.position.y;
+
+        Vector3 placePos = new Vector3(slot.transform.position.x, heldObjectBoundsY, slot.transform.position.z);
+
+        heldItem.transform.position = placePos;
         heldItem = null;
     }
 
-    public void PlaceOnPlate(GameObject plate)
+    public void PlaceOnPlate(GameObject plate, Vector3 placingPoint)
     {
         heldItem.transform.parent = plate.transform;
-        heldItem.GetComponent<Rigidbody>().isKinematic = true;
+        //heldItem.GetComponent<Rigidbody>().isKinematic = true;
         heldItem.GetComponent<Collider>().enabled = true;
         heldItem.GetComponent<Collider>().isTrigger = true;
         plate.GetComponent<Plate>().onPlate.Add(heldItem.gameObject);
-        heldItem.transform.position = plate.transform.position;
+
+        float colliderPositionY = plate.transform.position.y;
+
+        float heldObjectBoundsY = heldItem.GetComponent<Collider>().bounds.size.y/2;
+
+        heldObjectBoundsY += colliderPositionY;
+
+        Vector3 placePos = new Vector3(placingPoint.x, heldObjectBoundsY, placingPoint.z);
+
+        if (plate.GetComponent<mixingBowl>())
+        {
+            heldItem.transform.position = plate.GetComponent<mixingBowl>().holdingPosition.position;
+        }
+        else
+        {
+            heldItem.transform.position = placePos;
+        }
         heldItem = null;
     }
 
@@ -354,6 +433,16 @@ public class PickUpAndInteract : MonoBehaviour
         heldItem.GetComponent<Collider>().isTrigger = true;
         mixer.GetComponent<Mixer>().Bowl = heldItem.GetComponent<mixingBowl>();
         heldItem.transform.position = mixer.bowlDestination.position;
+        heldItem.transform.rotation = mixer.bowlDestination.rotation;
+
+        for (int i = 0; i < heldItem.transform.childCount; i++)
+        {
+            GameObject child = heldItem.transform.GetChild(i).gameObject;
+            if (child.tag == "bowlHelper")
+            {
+                child.GetComponent<Collider>().enabled = true;
+            }
+        }
         heldItem = null;
     }
 

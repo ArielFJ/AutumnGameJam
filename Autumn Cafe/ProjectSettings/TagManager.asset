@@ -8,6 +8,8 @@ TagManager:
   - Plate
   - Bowl
   - CustomerSpawnPoint
+  - cupStack
+  - bowlHelper
   layers:
   - Default
   - TransparentFX
