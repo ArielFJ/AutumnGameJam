@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
 
     public TextAsset inkFile;
     public GameObject dialogueUIContainer;
+    public Image characterPortrait;
     public GameObject textBox;
     public GameObject customButton;
     public GameObject optionPanel;
@@ -71,15 +72,17 @@ public class DialogueManager : MonoBehaviour
                 if (activeCharacter)
                 {
                     nametag.text = activeCharacter.characterName;
-                    activeCharacter.img.color = new Color32(255, 255, 255, 255);
+                    //activeCharacter.img.color = new Color32(255, 255, 255, 255);
+                    characterPortrait.color = new Color32(255, 255, 255, 255);
                 }
                 else
                 {
                     nametag.text = "";
-                    foreach (CharacterScript chr in allCharacters)
-                    {
-                        chr.img.color = new Color32(100, 100, 100, 255);
-                    }
+                    //foreach (CharacterScript chr in allCharacters)
+                    //{
+                    //    chr.img.color = new Color32(100, 100, 100, 255);
+                    //}
+                    characterPortrait.color = new Color32(100, 100, 100, 255);
                 }
 
                 AdvanceDialogue();
@@ -97,10 +100,18 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void SetActiveCharacter(CharacterScript character) => activeCharacter = character;
+    public void SetActiveCharacter(CharacterScript character)
+    {
+        activeCharacter = character;
+
+        // TODO: implement logic to decide if we want normal or important story
+        inkFile = activeCharacter.GetRandomStory();
+        story = new Story(inkFile.text);
+    }
 
     private void EnterDialogueMode()
     {
+        Debug.Log($"{nameof(DialogueManager)}: Start Dialogue");
         volumeTrigger.ActivateVolume();
         dialogueUIContainer.SetActive(true);
         dialogueCamera.SetActive(true);

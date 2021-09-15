@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Animator))]
 public class CharacterScript : MonoBehaviour
 {
+    public TextAsset[] inkStories;
+    public TextAsset[] importantInkStories;
     public string characterName;
     public Animator anim;
-    public Image img;
+    //public Image img;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,5 +34,13 @@ public class CharacterScript : MonoBehaviour
         }
     }
 
+    public TextAsset GetRandomStory() => GetRandomStoryFrom(inkStories);
 
+    public TextAsset GetRandomImportantStory() => GetRandomStoryFrom(importantInkStories);
+
+    private TextAsset GetRandomStoryFrom(TextAsset[] stories)
+    {
+        var index = Random.Range(0, stories.Length);
+        return stories[index];
+    }
 }

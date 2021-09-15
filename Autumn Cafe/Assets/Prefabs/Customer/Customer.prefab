@@ -1,5 +1,74 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2640046543674662137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6945510299483011394}
+  - component: {fileID: 639777211154783006}
+  - component: {fileID: 2035335722158567246}
+  m_Layer: 0
+  m_Name: CharacterScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6945510299483011394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2640046543674662137}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.704174, y: 1.8036304, z: -0.018253326}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7382467444816598072}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &639777211154783006
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2640046543674662137}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2035335722158567246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2640046543674662137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299a74494c3c3bc40993eba579123d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkStories:
+  - {fileID: 4900000, guid: 6cf48bb6d89824cc69e35b43f9a1aca6, type: 3}
+  - {fileID: 4900000, guid: c9e8a27e5a28a684ba5aed879b2c9b10, type: 3}
+  importantInkStories: []
+  characterName: 
+  anim: {fileID: 0}
 --- !u!1 &7382467444816598052
 GameObject:
   m_ObjectHideFlags: 0
@@ -16,7 +85,6 @@ GameObject:
   - component: {fileID: 5624581378616400983}
   - component: {fileID: 1630513958095405669}
   - component: {fileID: 5357012002129813587}
-  - component: {fileID: 4780861609040243197}
   - component: {fileID: 9129116644845165707}
   m_Layer: 8
   m_Name: Customer
@@ -37,6 +105,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6867116733601595702}
+  - {fileID: 6945510299483011394}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -118,6 +187,7 @@ MonoBehaviour:
   _name: Bill
   _desiredMeal: 0
   _desiredMealSelectionTime: {x: 2, y: 5}
+  _characterScript: {fileID: 2035335722158567246}
 --- !u!195 &5624581378616400983
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -171,21 +241,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _referenceImage: {fileID: 6039423640798760759}
   _timer: {fileID: 1630513958095405669}
---- !u!114 &4780861609040243197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7382467444816598052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 299a74494c3c3bc40993eba579123d22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: 
-  anim: {fileID: 0}
-  img: {fileID: 0}
 --- !u!114 &9129116644845165707
 MonoBehaviour:
   m_ObjectHideFlags: 0

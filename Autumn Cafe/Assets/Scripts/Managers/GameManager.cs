@@ -58,6 +58,8 @@ public class GameManager : MonoBehaviour
 
     public void EnterDialogueMode()
     {
+        Debug.Log($"{nameof(GameManager)}: Start Dialogue");
+
         onDialogueEnter?.Invoke();
         State = GameStateType.OnDialogue;
         PrepareToEnterMenu();

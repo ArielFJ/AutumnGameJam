@@ -6,12 +6,12 @@ public class Timer : MonoBehaviour
     [field: SerializeField, Min(0f)] public float MaxTime { get; set; } = 3f;
 
     [field: SerializeField, Min(-1f)] public float DefaultTime { get; set; } = -1f;
-    
+
     [field: SerializeField] public float CurrentTime { get; private set; }
-    
+
     [field: Tooltip("If true, time will flow descending (from MaxTime to 0), otherwise it'll flow ascending")]
     [field: SerializeField] public bool IsTimeInverted { get; set; }
-    
+
     [field: SerializeField] public bool IsRunning { get; set; }
 
     public Action onTimerTickFinished;
@@ -22,7 +22,6 @@ public class Timer : MonoBehaviour
     void Start()
     {
         _originalMaxTime = MaxTime;
-        //StartTimer();
     }
 
     // Update is called once per frame
@@ -34,10 +33,12 @@ public class Timer : MonoBehaviour
     public void StartTimer()
     {
         ResetTimer();
-        IsRunning = true;
+        ResumeTime();
     }
 
     public void StopTimer() => IsRunning = false;
+
+    public void ResumeTime() => IsRunning = true;
 
     private void Tick()
     {
@@ -46,7 +47,7 @@ public class Timer : MonoBehaviour
         var deltaTime = Time.deltaTime;
         CurrentTime += IsTimeInverted ? -deltaTime : deltaTime;
 
-        if (CurrentTime >= MaxTime || CurrentTime <= 0) OnTimerTickFinished();
+        if (CurrentTime > MaxTime || CurrentTime < 0) OnTimerTickFinished();
     }
 
     private void OnTimerTickFinished()
@@ -67,5 +68,12 @@ public class Timer : MonoBehaviour
         }
     }
 
-    public void ResetMaxTime() => MaxTime = _originalMaxTime;
+    public void ResetMaxTime()
+    {
+        MaxTime = _originalMaxTime;
+        if (IsTimeInverted)
+        {
+            if (CurrentTime > MaxTime) CurrentTime = MaxTime;
+        }
+    }
 }

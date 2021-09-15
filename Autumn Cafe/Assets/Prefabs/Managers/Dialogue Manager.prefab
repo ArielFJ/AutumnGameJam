@@ -122,6 +122,7 @@ MonoBehaviour:
     m_Bits: 512
   inkFile: {fileID: 4900000, guid: 6cf48bb6d89824cc69e35b43f9a1aca6, type: 3}
   dialogueUIContainer: {fileID: 3111719768889471052}
+  characterPortrait: {fileID: 2107430662547468860}
   textBox: {fileID: 2107430663681494436}
   customButton: {fileID: 2630488423481956466, guid: e65c777fe487b1741bda721bbea2edce, type: 3}
   optionPanel: {fileID: 2107430663824344231}
@@ -245,9 +246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299a74494c3c3bc40993eba579123d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inkStories: []
+  importantInkStories: []
   characterName: Fox
   anim: {fileID: 2107430662547468861}
-  img: {fileID: 2107430662547468860}
 --- !u!1 &2107430662625658251
 GameObject:
   m_ObjectHideFlags: 0
