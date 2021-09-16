@@ -12,6 +12,5 @@ public enum MealType
     Cake,
     CoffeeCake,
     CoffeeCream,
-    Cappuchino,
 
 }
