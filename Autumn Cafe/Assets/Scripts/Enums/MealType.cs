@@ -2,5 +2,16 @@ public enum MealType
 {
     None,
     Pie,
-    IceCream
+    IceCream,
+    Latte,
+    PumpkinSpiceLatte,
+    Coffee,
+    Tea,
+    CoffeeSugar,
+    LatteSugar,
+    Cake,
+    CoffeeCake,
+    CoffeeCream,
+    Cappuchino,
+
 }

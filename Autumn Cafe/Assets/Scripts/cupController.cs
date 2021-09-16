@@ -8,12 +8,30 @@ public class cupController : MonoBehaviour
     public LayerMask layerMask;
 
     public OpenCup cupVisuals;
+    public Meal mealScript;
 
     public float fillSpeed;
     public float totalFill;
     public float maxFill;
 
-    public Dictionary<string, float> filledWith = new Dictionary<string, float>();
+    [System.Serializable]
+    public class fillEntry
+    {
+        public string substance;
+        public float amount;
+    }
+
+    public List<fillEntry> filledWith = new List<fillEntry>();
+
+    public List<DrinkEntry> recipies = new List<DrinkEntry>();
+
+    [System.Serializable]
+    public class DrinkEntry
+    {
+        public List<string> Ingredients = new List<string>();
+        public List<float> Amounts = new List<float>();
+        public MealType product;
+    }
 
     private void OnEnable()
     {
@@ -35,6 +53,37 @@ public class cupController : MonoBehaviour
         }
 
         cupVisuals.fillAmount = totalFill;
+
+        foreach (DrinkEntry entry in recipies)
+        {
+            if (filledWith.Count == entry.Ingredients.Count)
+            {
+                bool falied = false;
+
+                foreach (string ingredient in entry.Ingredients)
+                {
+                    int i = 0;
+                    foreach (fillEntry FE in filledWith)
+                    {
+                        if (FE.substance == ingredient && entry.Amounts[i] >= FE.amount - 15 && entry.Amounts[i] <= FE.amount + 15)
+                        {
+                            falied = false; // our ingredients match up so we havent failed yet
+                            break;
+                        }
+                        else
+                        {
+                            falied = true; // there is an ingredient missing so we fail
+                            i++;
+                        }
+                    }
+                }
+
+                if (falied == false) // we've gone through each ingredient and they all match up
+                {
+                    mealScript.mealType = entry.product;
+                }
+            }
+        }
     }
     
     private void Fill()
@@ -47,15 +96,37 @@ public class cupController : MonoBehaviour
             {
                 fillHit.collider.GetComponent<Fillable>().amount -= fillSpeed * Time.deltaTime;
 
-                if (filledWith.ContainsKey(fillHit.collider.GetComponent<Fillable>().containing))
+                bool failed = true;
+                foreach(fillEntry entry in filledWith)
                 {
-                    filledWith[fillHit.collider.GetComponent<Fillable>().containing] = filledWith[fillHit.collider.GetComponent<Fillable>().containing] + fillSpeed * Time.deltaTime;
-                    totalFill += fillSpeed * Time.deltaTime;
+                    if (entry.substance == fillHit.collider.GetComponent<Fillable>().containing)
+                    {
+                        entry.amount += fillSpeed * Time.deltaTime;
+                        totalFill += fillSpeed * Time.deltaTime;
+
+                        if(entry.amount >= maxFill)
+                        {
+                            entry.amount = maxFill;
+                        }
+
+                        if (totalFill >= maxFill)
+                        {
+                            totalFill = maxFill;
+                        }
+                        failed = false;
+                    }
+                    else
+                    {
+                        failed = true;
+                    }
                 }
-                else
+
+                if(failed == true)
                 {
-                    filledWith.Add(fillHit.collider.GetComponent<Fillable>().containing, fillSpeed * Time.deltaTime);
-                    totalFill += fillSpeed * Time.deltaTime;
+                    fillEntry newEntry = new fillEntry();
+                    newEntry.substance = fillHit.collider.GetComponent<Fillable>().containing;
+                    newEntry.amount = fillSpeed * Time.deltaTime;
+                    filledWith.Add(newEntry);
                 }
             }
         }

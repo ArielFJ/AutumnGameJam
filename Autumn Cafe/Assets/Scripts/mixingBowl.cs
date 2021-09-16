@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class mixingBowl : Plate
 {
-
+    public Transform holdingPosition;
     public float mixAmount;
 
     public override void Update()

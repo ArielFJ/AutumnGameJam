@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 507119688314092331}
   - component: {fileID: 5224271116366390744}
   - component: {fileID: 2855255412040864943}
+  - component: {fileID: 6977131203669758339}
   m_Layer: 6
   m_Name: Cup
   m_TagString: Untagged
@@ -87,9 +88,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   cupVisuals: {fileID: 950643799048702598}
+  mealScript: {fileID: 6977131203669758339}
   fillSpeed: 11
   totalFill: 0
   maxFill: 100
+  filledWith: []
+  recipies:
+  - Ingredients:
+    - Tea
+    Amounts:
+    - 100
+    product: 6
 --- !u!114 &950643799048702598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Paper Cup
-  canBeInspected: 0
+  canBeInspected: 1
+  canBeTrashed: 1
 --- !u!65 &5224271116366390744
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -152,6 +162,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &6977131203669758339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950643799048702595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9623820019a41f84494ebed2474dc147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mealType: 0
 --- !u!1 &950643800217170979
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +315,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 05af2a9df9137784bba8e292b08f56cc, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
