@@ -79,7 +79,6 @@ public class Customer : MonoBehaviour
 
     private void OnPatienceDepleted()
     {
-        Debug.Log("Patience depleted");
         MoveToExit();
     }
 
@@ -195,7 +194,7 @@ public class Customer : MonoBehaviour
             //ManageDialog();
 
             //MoveToExit();
-            StartCoroutine(StartEatingMeal());
+            StartCoroutine(StartEatingMeal(meal));
 
             didReceiveMeal = true;
         }
@@ -208,7 +207,7 @@ public class Customer : MonoBehaviour
         return didReceiveMeal;
     }
 
-    private IEnumerator StartEatingMeal()
+    private IEnumerator StartEatingMeal(Meal meal)
     {
         // TODO: trigger eat animation
         _timer.StopTimer();
@@ -217,6 +216,9 @@ public class Customer : MonoBehaviour
 
         // TODO: Show indicator depending on meal quality
         _currentChair.CleanPlace();
+
+        ScoreManager.Instance.AddScore(meal.GetCalculatedScore());
+
         Debug.Log("Finished eating");
         MoveToExit();
     }
