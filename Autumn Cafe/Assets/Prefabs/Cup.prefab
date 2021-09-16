@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipText: Paper Cup
   canBeInspected: 1
+  canBeTrashed: 1
 --- !u!65 &5224271116366390744
 BoxCollider:
   m_ObjectHideFlags: 0
