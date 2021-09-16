@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Latte
   m_EditorClassIdentifier: 
   mealType: 3
-  mealSprite: {fileID: 0}
+  mealSprite: {fileID: 21300000, guid: 7d6d5225d5a2b40e3959b66d13b6e29c, type: 3}
