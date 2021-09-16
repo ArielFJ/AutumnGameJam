@@ -1,10 +1,13 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Timer))]
 public class SceneTimerManager : MonoBehaviour
 {
     public static SceneTimerManager Instance;
+
+    public Action onSceneTimerOver;
 
     private Timer _timer;
 
@@ -32,6 +35,18 @@ public class SceneTimerManager : MonoBehaviour
     private void GameOver()
     {
         // TODO: Check new high scores
-        Debug.Log("Game Over");
+        onSceneTimerOver?.Invoke();
+
+        StartCoroutine(DelayGameOverCall());
+    }
+
+    IEnumerator DelayGameOverCall()
+    {
+        while (CustomerManager.Instance.CustomersInWorld > 0)
+        {
+            yield return null;
+        }
+
+        GameManager.Instance.GameOver();
     }
 }

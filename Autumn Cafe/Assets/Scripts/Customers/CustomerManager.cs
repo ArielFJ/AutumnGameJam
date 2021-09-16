@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,12 +30,17 @@ public class CustomerManager : MonoBehaviour
 
     public Transform ExitPoint => _exitPoint;
 
+    public int CustomersInWorld => _spawnedCustomers.Count;
+
     private void Awake()
     {
         Instance = this;
     }
 
-    // Start is called before the first frame update
+    private void OnEnable() => SceneTimerManager.Instance.onSceneTimerOver += StopSpawning;
+    
+    private void OnDisable() => SceneTimerManager.Instance.onSceneTimerOver -= StopSpawning;
+
     void Start()
     {
         _waitingCustomers = new Queue<Customer>();

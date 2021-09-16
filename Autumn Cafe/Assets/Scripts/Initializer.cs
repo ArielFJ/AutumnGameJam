@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// Use this class to initialize all objects that are important for the application, such as Managers
 /// </summary>
+[DefaultExecutionOrder(-100)]
 public class Initializer : MonoBehaviour
 {
     private void Awake()

@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public Action onResume;
     public Action onDialogueEnter;
     public Action onDialogueExit;
+    public Action onGameOver;
 
     [field: SerializeField] public GameStateType State { get; private set; }
 
@@ -64,8 +65,6 @@ public class GameManager : MonoBehaviour
         State = GameStateType.OnDialogue;
         PrepareToEnterMenu();
 
-        // This will pause the entire game, but animations with Update Mode = Unscaled Time will still reproduce
-        Time.timeScale = 0;
     }
 
     public void ExitDialogueMode()
@@ -73,8 +72,6 @@ public class GameManager : MonoBehaviour
         onDialogueExit?.Invoke();
         State = GameStateType.Playing;
         PrepareToPlay();
-
-        Time.timeScale = 1;
     }
 
     public void PauseGame()
@@ -88,7 +85,6 @@ public class GameManager : MonoBehaviour
         State = GameStateType.Paused;
         PrepareToEnterMenu();
         onPause?.Invoke();
-        Time.timeScale = 0;
     }
 
     public void ResumeGame()
@@ -110,6 +106,13 @@ public class GameManager : MonoBehaviour
             PrepareToPlay();
         }
 
+    public void GameOver()
+    {
+        if (State != GameStateType.Playing) return;
+
+        State = GameStateType.GameOver;
+        PrepareToEnterMenu();
+        onGameOver?.Invoke();
     }
 
     public void PrepareToPlay()
@@ -117,6 +120,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1;
         _fpsController?.Activate();
     }
 
@@ -125,6 +129,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
+
+        // This will pause the entire game, but animations with Update Mode = Unscaled Time will still reproduce
+        Time.timeScale = 0;
         _fpsController?.Deactivate();
     }
 
