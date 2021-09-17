@@ -8,11 +8,11 @@ public class musicPlayer : Interactible
     public MusicMenu MusicMenu;
     public GameObject canvas;
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
     public List<AudioClip> songs = new List<AudioClip>();
     public float volume;
     private float trackTimer;
-    private float songsPlayed;
+    public int songsPlayed;
     private bool[] beenPlayed;
 
     public bool shuffle;
@@ -23,11 +23,10 @@ public class musicPlayer : Interactible
     AudioClip current;
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         beenPlayed = new bool[songs.Count];
         if (!audioSource.isPlaying)
         {
-            ChangeSong(Random.Range(0,songs.Count));
+            ChangeSong(0);
         }
     }
 
@@ -47,7 +46,9 @@ public class musicPlayer : Interactible
             }
             else
             {
-                ChangeSong(songs.IndexOf(audioSource.clip)+1);
+                songsPlayed++;
+                ResetSuffle();
+                ChangeSong(songsPlayed);
             }
             skip = false;
         }
@@ -68,7 +69,6 @@ public class musicPlayer : Interactible
         if (!beenPlayed[songPicked])
         {
             trackTimer = 0;
-            songsPlayed++;
             beenPlayed[songPicked] = true;
             audioSource.clip = songs[songPicked];
             audioSource.Play();
@@ -83,6 +83,8 @@ public class musicPlayer : Interactible
     {
         if(songsPlayed == songs.Count)
         {
+            Debug.Log("reset");
+
             songsPlayed = 0;
             for(int i = 0; i < songs.Count; i++)
             {
