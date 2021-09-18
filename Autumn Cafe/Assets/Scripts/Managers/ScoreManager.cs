@@ -41,7 +41,7 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int score)
     {
         Score += score > 0 ? score : 0;
-        scoreText.text = $"Score: {Score}";
+        scoreText.text = $"{scorePrefixText}{Score}";
     }
 
     public bool CheckHighScore()
@@ -59,7 +59,7 @@ public class ScoreManager : MonoBehaviour
 
         scoreText.gameObject.SetActive(false);
 
-        gameOverScoreText.text = $"{scorePrefixText}{Score}";
+        gameOverScoreText.text = $"{Score}";
         gameOverUIContainer.SetActive(true);
     }
 }

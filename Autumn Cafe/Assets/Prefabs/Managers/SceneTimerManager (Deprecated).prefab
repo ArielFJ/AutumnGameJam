@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 7565352468320325283}
   - component: {fileID: 7565352468320324958}
   m_Layer: 0
-  m_Name: SceneTimerManager
+  m_Name: SceneTimerManager (Deprecated)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
