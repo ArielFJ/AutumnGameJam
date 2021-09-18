@@ -12,12 +12,12 @@ public class Customer : MonoBehaviour
     [SerializeField] private string _name = "Bill";
     [SerializeField] private MealType _desiredMeal;
     [SerializeField] private Vector2 _desiredMealSelectionTime;
+    [SerializeField] private CharacterScript _characterScript;
 
     public DateTime StoreArrivalTime { get; set; }
 
     private NavMeshAgent _agent;
     private Timer _timer;
-    private CharacterScript _characterScript;
     private CustomerUI _customerUI;
 
     private Chair _currentChair;
@@ -44,8 +44,8 @@ public class Customer : MonoBehaviour
     {
         _agent = GetComponent<NavMeshAgent>();
         _timer = GetComponent<Timer>();
-        _characterScript = GetComponent<CharacterScript>();
         _customerUI = GetComponent<CustomerUI>();
+
         if (_characterScript) _characterScript.characterName = _name;
 
         _timer.onTimerTickFinished += OnPatienceDepleted;
@@ -148,7 +148,7 @@ public class Customer : MonoBehaviour
     void MoveToExit()
     {
         StartCoroutine(MoveTowards(
-            CustomerManager.Instance.ExitPoint.position,
+            CustomerManager.Instance.RandomExitPoint.position,
             beforeMoving: () =>
             {
                 if (_currentChair != null) _currentChair.IsOccupied = false;
@@ -191,18 +191,36 @@ public class Customer : MonoBehaviour
             Debug.Log($"{_name} is satisfied with your services");
             _currentChair.LocateInMealSpace(meal.gameObject);
             CheckMealQuality();
-            ManageDialog();
+            //ManageDialog();
 
-            MoveToExit();
+            //MoveToExit();
+            StartCoroutine(StartEatingMeal(meal));
+
             didReceiveMeal = true;
         }
         else
         {
             Debug.Log($"{_name} didn't asked for {meal.mealType}");
+            Destroy(meal.gameObject);
         }
-        Destroy(meal.gameObject);
 
         return didReceiveMeal;
+    }
+
+    private IEnumerator StartEatingMeal(Meal meal)
+    {
+        // TODO: trigger eat animation
+        _timer.StopTimer();
+        var secondsToWait = Random.Range(1.5f, 3f);
+        yield return new WaitForSeconds(secondsToWait);
+
+        // TODO: Show indicator depending on meal quality
+        _currentChair.CleanPlace();
+
+        ScoreManager.Instance.AddScore(meal.GetCalculatedScore());
+
+        Debug.Log("Finished eating");
+        MoveToExit();
     }
 
     public void StartMealSelectionDialogue()
@@ -221,7 +239,9 @@ public class Customer : MonoBehaviour
         if (!_characterScript) return;
 
         // TODO: Check error when character script is set
-        //DialogueManager.Instance.SetActiveCharacter(_characterScript);
+        Debug.Log($"{nameof(Customer)}: Start Dialogue");
+
+        DialogueManager.Instance.SetActiveCharacter(_characterScript);
         gameObject.layer = LayerMask.NameToLayer("DialogueFocus");
         GameManager.Instance.EnterDialogueMode();
     }

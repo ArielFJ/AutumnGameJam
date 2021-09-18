@@ -9,6 +9,8 @@ public class SceneLoader : MonoBehaviour
         GameManager.Instance.PrepareToPlay();
     }
 
+    public void ReloadScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     public void Exit()
     {
 #if UNITY_EDITOR

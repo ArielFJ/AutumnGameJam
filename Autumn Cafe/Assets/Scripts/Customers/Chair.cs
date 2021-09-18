@@ -21,6 +21,7 @@ public class Chair : MonoBehaviour
     {
         _mealInTable = obj;
         obj.transform.position = mealSpace.position;
+        obj.transform.parent = transform;
     }
 
     public void CleanPlace()

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3165a390f469e47b9009d63cac03f9, type: 3}
   m_Name: Tea
   m_EditorClassIdentifier: 
-  mealType: 6
-  mealSprite: {fileID: 0}
+  mealType: 4
+  mealSprite: {fileID: 21300000, guid: 7d6d5225d5a2b40e3959b66d13b6e29c, type: 3}

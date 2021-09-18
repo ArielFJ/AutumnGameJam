@@ -16,10 +16,12 @@ public class DialogueManager : MonoBehaviour
 
     public TextAsset inkFile;
     public GameObject dialogueUIContainer;
+    public Image characterPortrait;
     public GameObject textBox;
     public GameObject customButton;
     public GameObject optionPanel;
     public Transform[] optionPositions;
+    public GameObject nextButton;
     public bool isTalking = false;
 
     static Story story;
@@ -63,44 +65,65 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //    UpdateDialogue();
+    }
+
+    public void UpdateDialogue()
+    {
+        //Is there more to the story?
+        if (story.canContinue)
         {
-            //Is there more to the story?
-            if (story.canContinue)
+            //if (activeCharacter)
+            //{
+            //    nametag.text = activeCharacter.characterName;
+            //    //activeCharacter.img.color = new Color32(255, 255, 255, 255);
+            //    characterPortrait.color = new Color32(255, 255, 255, 255);
+            //}
+            //else
+            //{
+            //    nametag.text = "";
+            //    //foreach (CharacterScript chr in allCharacters)
+            //    //{
+            //    //    chr.img.color = new Color32(100, 100, 100, 255);
+            //    //}
+            //    characterPortrait.color = new Color32(100, 100, 100, 255);
+            //}
+
+            AdvanceDialogue();
+
+            //Are there any choices?
+            if (story.currentChoices.Count != 0)
             {
-                if (activeCharacter)
-                {
-                    nametag.text = activeCharacter.characterName;
-                    activeCharacter.img.color = new Color32(255, 255, 255, 255);
-                }
-                else
-                {
-                    nametag.text = "";
-                    foreach (CharacterScript chr in allCharacters)
-                    {
-                        chr.img.color = new Color32(100, 100, 100, 255);
-                    }
-                }
+                characterPortrait.color = new Color32(100, 100, 100, 255);
+                nextButton.SetActive(false);
 
-                AdvanceDialogue();
-
-                //Are there any choices?
-                if (story.currentChoices.Count != 0)
-                {
-                    StartCoroutine(ShowChoices());
-                }
+                StartCoroutine(ShowChoices());
             }
             else
             {
-                FinishDialogue();
+                characterPortrait.color = new Color32(255, 255, 255, 255);
             }
+        }
+        else
+        {
+            FinishDialogue();
         }
     }
 
-    public void SetActiveCharacter(CharacterScript character) => activeCharacter = character;
+    public void SetActiveCharacter(CharacterScript character)
+    {
+        activeCharacter = character;
+
+        // TODO: implement logic to decide if we want normal or important story
+        inkFile = activeCharacter.GetRandomStory();
+        story = new Story(inkFile.text);
+        UpdateDialogue();
+    }
 
     private void EnterDialogueMode()
     {
+        Debug.Log($"{nameof(DialogueManager)}: Start Dialogue");
         volumeTrigger.ActivateVolume();
         dialogueUIContainer.SetActive(true);
         dialogueCamera.SetActive(true);
@@ -183,6 +206,7 @@ public class DialogueManager : MonoBehaviour
             }
         }
         choiceSelected = null; // Forgot to reset the choiceSelected. Otherwise, it would select an option without player intervention.
+        nextButton.SetActive(true);
         AdvanceDialogue();
     }
 
