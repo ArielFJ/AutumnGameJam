@@ -10,6 +10,7 @@ TagManager:
   - CustomerSpawnPoint
   - cupStack
   - bowlHelper
+  - CustomerExitPoint
   layers:
   - Default
   - TransparentFX

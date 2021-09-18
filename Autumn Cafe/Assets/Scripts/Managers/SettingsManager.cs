@@ -18,9 +18,9 @@ public class SettingsManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        MasterVolume = PlayerPrefs.GetFloat(nameof(MasterVolume));
-        MusicVolume = PlayerPrefs.GetFloat(nameof(MusicVolume));
-        SFXVolume = PlayerPrefs.GetFloat(nameof(SFXVolume));
+        MasterVolume = PlayerPrefs.GetFloat(nameof(MasterVolume), MasterVolume);
+        MusicVolume = PlayerPrefs.GetFloat(nameof(MusicVolume), MusicVolume);
+        SFXVolume = PlayerPrefs.GetFloat(nameof(SFXVolume), SFXVolume);
     }
 
     private void OnDisable()

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be3165a390f469e47b9009d63cac03f9, type: 3}
-  m_Name: Pie
+  m_Name: ApplePie
   m_EditorClassIdentifier: 
   mealType: 1
   mealSprite: {fileID: 21300000, guid: 8df1047a8321a2f4fa865937709458f9, type: 3}

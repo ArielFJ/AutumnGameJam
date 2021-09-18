@@ -11,6 +11,7 @@ public class CustomerManager : MonoBehaviour
 
     [Tooltip("Possible spawn positions for Customers, each children of this gameobject will be a Spawn Point")]
     [SerializeField] private Transform[] _spawnPoints;
+    [SerializeField] private Transform[] _exitPoints;
 
     [SerializeField] private List<Customer> _availableCustomers;
     [SerializeField] private Vector3 _customersSeparationOffset;
@@ -22,13 +23,19 @@ public class CustomerManager : MonoBehaviour
     private List<Customer> _seatedCustomers;
     private List<Customer> _spawnedCustomers;
     private Dictionary<Vector3, Customer> _spacesInQueue;
-    private Transform _exitPoint;
     private Transform _entrancePoint;
     private int _maxCustomersInWorld;
     private int _spawnedCustomersCount;
     private bool _shouldInstantiate;
 
-    public Transform ExitPoint => _exitPoint;
+    public Transform RandomExitPoint
+    {
+        get
+        {
+            var index = Random.Range(0, _exitPoints.Length);
+            return _exitPoints[index];
+        }
+    }
 
     public int CustomersInWorld => _spawnedCustomers.Count;
 
@@ -49,9 +56,11 @@ public class CustomerManager : MonoBehaviour
         _spacesInQueue = new Dictionary<Vector3, Customer>();
         _maxCustomersInWorld = _maxCustomersInQueue + ChairManager.Instance.FreeChairCount;
 
-        _exitPoint = transform.Find("ExitPoint");
         _entrancePoint = transform.Find("EntrancePoint");
         _spawnPoints = GameObject.FindGameObjectsWithTag("CustomerSpawnPoint")
+            .Select(obj => obj.transform)
+            .ToArray();
+        _exitPoints = GameObject.FindGameObjectsWithTag("CustomerExitPoint")
             .Select(obj => obj.transform)
             .ToArray();
 

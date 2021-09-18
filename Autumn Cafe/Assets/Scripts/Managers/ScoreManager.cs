@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
 
     [field: SerializeField] public int Score { get; private set; }
     [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private string scorePrefixText;
 
     [Header("Game Over Menu")]
     [SerializeField] private GameObject gameOverUIContainer;
@@ -24,7 +25,7 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         AddScore(0);
-        // TODO: load last high score
+        _highScore = PlayerPrefs.GetInt(nameof(_highScore), _highScore);
     }
 
     private void OnEnable()
@@ -48,7 +49,7 @@ public class ScoreManager : MonoBehaviour
         if (Score <= _highScore) return false;
 
         _highScore = Score;
-        // TODO: Save new high score
+        PlayerPrefs.GetInt(nameof(_highScore), _highScore);
         return true;
     }
 
@@ -56,7 +57,9 @@ public class ScoreManager : MonoBehaviour
     {
         if (CheckHighScore()) newHighScore.SetActive(true);
 
-        gameOverScoreText.text = $"Score: {Score}";
+        scoreText.gameObject.SetActive(false);
+
+        gameOverScoreText.text = $"{scorePrefixText}{Score}";
         gameOverUIContainer.SetActive(true);
     }
 }

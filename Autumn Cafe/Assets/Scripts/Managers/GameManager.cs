@@ -93,7 +93,9 @@ public class GameManager : MonoBehaviour
 
         TryFindScripts();
 
-        State = (_lastState == GameStateType.Playing || _lastState == GameStateType.OnDialogue) ? _lastState : GameStateType.Playing;
+        State = (_lastState == GameStateType.Playing || _lastState == GameStateType.OnDialogue)
+            ? _lastState
+            : GameStateType.Playing;
         onResume?.Invoke();
         if (State != GameStateType.OnDialogue)
         {
@@ -105,6 +107,7 @@ public class GameManager : MonoBehaviour
             //Time.timeScale = 1;
             PrepareToPlay();
         }
+    }
 
     public void GameOver()
     {

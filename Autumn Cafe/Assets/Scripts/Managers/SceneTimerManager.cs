@@ -10,11 +10,12 @@ public class SceneTimerManager : MonoBehaviour
     public Action onSceneTimerOver;
 
     private Timer _timer;
-
+    private TimerUI _timerUi;
     private void Awake()
     {
         Instance = this;
         _timer = GetComponent<Timer>();
+        TryGetComponent(out _timerUi);
     }
 
     private void Start()
@@ -48,5 +49,6 @@ public class SceneTimerManager : MonoBehaviour
         }
 
         GameManager.Instance.GameOver();
+        if (_timerUi) _timerUi.HideTimerUI();
     }
 }

@@ -148,7 +148,7 @@ public class Customer : MonoBehaviour
     void MoveToExit()
     {
         StartCoroutine(MoveTowards(
-            CustomerManager.Instance.ExitPoint.position,
+            CustomerManager.Instance.RandomExitPoint.position,
             beforeMoving: () =>
             {
                 if (_currentChair != null) _currentChair.IsOccupied = false;
