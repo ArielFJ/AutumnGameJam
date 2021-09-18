@@ -10,6 +10,7 @@ public class Initializer : MonoBehaviour
     {
         // Add here any other important object
         var gameManager = TryAddingObject<GameManager>(nameof(GameManager));
+        TryAddingObject<SettingsManager>(nameof(SettingsManager));
 
         var activeSceneName = SceneManager.GetActiveScene().name;
      

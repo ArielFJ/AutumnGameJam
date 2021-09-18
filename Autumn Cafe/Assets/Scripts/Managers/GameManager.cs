@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -95,17 +96,23 @@ public class GameManager : MonoBehaviour
         TryFindScripts();
 
         State = (_lastState == GameStateType.Playing || _lastState == GameStateType.OnDialogue) ? _lastState : GameStateType.Playing;
+        onResume?.Invoke();
         if (State != GameStateType.OnDialogue)
         {
-            Time.timeScale = 1;
+            var timeScale = 0;
+            DOTween
+                .To(() => timeScale, value => timeScale = value, 1, 1f)
+                .OnUpdate(() => Time.timeScale = timeScale)
+                .SetUpdate(true);
+            //Time.timeScale = 1;
             PrepareToPlay();
         }
-        onResume?.Invoke();
 
     }
 
     public void PrepareToPlay()
     {
+        Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         _fpsController?.Activate();
@@ -113,6 +120,7 @@ public class GameManager : MonoBehaviour
 
     public void PrepareToEnterMenu()
     {
+        Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         _fpsController?.Deactivate();
