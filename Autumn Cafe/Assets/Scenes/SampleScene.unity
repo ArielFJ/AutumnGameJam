@@ -16276,7 +16276,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c1e34c23092a7ef4a94caeea2936519c, type: 3}
   - {fileID: 8300000, guid: b4025ba10ac8c8b4b89667977dcbed04, type: 3}
   - {fileID: 8300000, guid: aeb23713b97af684db53916fd8356019, type: 3}
-  volume: 0
+  volume: 0.5
   songsPlayed: 0
   shuffle: 0
   skip: 0
@@ -16338,7 +16338,7 @@ AudioSource:
   m_GameObject: {fileID: 8125379657373721523}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -4029573477954019283, guid: 2608a2a61782235469e60cccc936d3f3, type: 2}
   m_audioClip: {fileID: 8300000, guid: beed1c43d1c2f194bb15a4c29ac603c3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
