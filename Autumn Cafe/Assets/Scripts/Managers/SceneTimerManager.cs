@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Timer))]
+[DefaultExecutionOrder(-100)]
 public class SceneTimerManager : MonoBehaviour
 {
     public static SceneTimerManager Instance;
