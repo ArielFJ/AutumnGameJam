@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a70011e8b4aeeca479eb9c848bdfc3ac, type: 2}
+  - {fileID: 2100000, guid: bca45a9d518a16444b87180b38b36aca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,7 +140,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a70011e8b4aeeca479eb9c848bdfc3ac, type: 2}
+  - {fileID: 2100000, guid: bca45a9d518a16444b87180b38b36aca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -239,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipText: Large Pumpkin Pie Slice
   canBeInspected: 1
+  canBeTrashed: 0
 --- !u!54 &248365865026138081
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -280,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9623820019a41f84494ebed2474dc147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mealType: 1
+  mealType: 3
 --- !u!1 &1619870764580233715
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +341,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a70011e8b4aeeca479eb9c848bdfc3ac, type: 2}
+  - {fileID: 2100000, guid: bca45a9d518a16444b87180b38b36aca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -421,7 +422,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a70011e8b4aeeca479eb9c848bdfc3ac, type: 2}
+  - {fileID: 2100000, guid: bca45a9d518a16444b87180b38b36aca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -502,7 +503,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a70011e8b4aeeca479eb9c848bdfc3ac, type: 2}
+  - {fileID: 2100000, guid: bca45a9d518a16444b87180b38b36aca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -583,7 +584,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a70011e8b4aeeca479eb9c848bdfc3ac, type: 2}
+  - {fileID: 2100000, guid: bca45a9d518a16444b87180b38b36aca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -664,7 +665,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a70011e8b4aeeca479eb9c848bdfc3ac, type: 2}
+  - {fileID: 2100000, guid: bca45a9d518a16444b87180b38b36aca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -745,7 +746,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a70011e8b4aeeca479eb9c848bdfc3ac, type: 2}
+  - {fileID: 2100000, guid: bca45a9d518a16444b87180b38b36aca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

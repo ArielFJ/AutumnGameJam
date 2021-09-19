@@ -113,9 +113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mLiquid: {fileID: 950643798619327749}
   mLiquidMesh: {fileID: 950643800267695566}
-  mSloshSpeed: 0.00001
-  mRotateSpeed: 0.0000001
-  Difference: 25
+  mSloshSpeed: 0
+  mRotateSpeed: 0
+  Difference: 0
   fillAmount: 0
   maxFillAmount: 100
 --- !u!114 &507119688314092331
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Paper Cup
-  canBeInspected: 1
+  canBeInspected: 0
   canBeTrashed: 1
 --- !u!65 &5224271116366390744
 BoxCollider:
@@ -315,7 +315,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100010, guid: 47616bd0cda748d4cbedcfc908506b9d, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

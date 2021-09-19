@@ -36,6 +36,12 @@ public class cupController : MonoBehaviour
     private void OnEnable()
     {
         Cursor.lockState = CursorLockMode.Confined;
+        gameObject.GetComponent<Rigidbody>().freezeRotation = true;
+    }
+
+    private void OnDisable()
+    {
+        gameObject.GetComponent<Rigidbody>().freezeRotation = false;
     }
 
     private void Update()
