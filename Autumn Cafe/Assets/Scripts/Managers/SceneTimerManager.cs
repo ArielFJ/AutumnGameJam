@@ -10,6 +10,8 @@ public class SceneTimerManager : MonoBehaviour
 
     public Action onSceneTimerOver;
 
+    [SerializeField] private float _startTimeDelay = 3f;
+
     private Timer _timer;
     private TimerUI _timerUi;
     private void Awake()
@@ -19,8 +21,9 @@ public class SceneTimerManager : MonoBehaviour
         TryGetComponent(out _timerUi);
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
+        yield return new WaitForSeconds(_startTimeDelay);
         _timer.StartTimer();
     }
 
