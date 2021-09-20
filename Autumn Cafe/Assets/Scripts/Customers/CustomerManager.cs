@@ -18,6 +18,7 @@ public class CustomerManager : MonoBehaviour
     [SerializeField] private Vector2 _customersSpawnTimeLimits;
     [SerializeField] private int _maxCustomersInQueue = 3;
     [SerializeField] private int _maxCustomersSpawned = 3;
+    [SerializeField] private float _firstSpawnDelay = 3f;
 
     private Queue<Customer> _waitingCustomers;
     private List<Customer> _seatedCustomers;
@@ -65,7 +66,7 @@ public class CustomerManager : MonoBehaviour
             .ToArray();
 
         ChairManager.Instance.onChairEmptyDetected += AssignChairToCustomer;
-        StartSpawning();
+        Invoke(nameof(StartSpawning), _firstSpawnDelay);
     }
 
     private void Update()
