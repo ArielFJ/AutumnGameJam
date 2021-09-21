@@ -293,6 +293,8 @@ MonoBehaviour:
   _desiredMeal: 0
   _desiredMealSelectionTime: {x: 2, y: 5}
   _characterScript: {fileID: 2035335722158567246}
+  _correctMealAudio: {fileID: 8300000, guid: e685b69e857a6a546b4d4b46cd084bf8, type: 3}
+  _incorrectMealAudio: {fileID: 8300000, guid: bfda50777b52bcd4e9bc76f67fc83a8d, type: 3}
 --- !u!195 &5624581378616400983
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -391,6 +393,7 @@ MonoBehaviour:
   patienceBarUIContainer: {fileID: 6938359093765614913}
   orderUIContainer: {fileID: 8943112334273473104}
   orderIndicatorImage: {fileID: 7758105272272330281}
+  orderIndicatorText: {fileID: 9015909709353732833}
 --- !u!1001 &8308942588534315927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -523,5 +526,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9015909709353732833 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1031809603990819190, guid: 13023f27d19770347a05f3522b8def81, type: 3}
+  m_PrefabInstance: {fileID: 8308942588534315927}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

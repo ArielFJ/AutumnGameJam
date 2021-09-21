@@ -2,12 +2,14 @@ using System;
 using TMPro;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
 
     [field: SerializeField] public int Score { get; private set; }
     [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private AudioClip highScoreClip;
     [SerializeField] private string scorePrefixText;
 
     [Header("Game Over Menu")]
@@ -16,10 +18,12 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TMP_Text gameOverScoreText;
 
     private int _highScore;
+    private AudioSource _audioSource;
 
     private void Awake()
     {
         Instance = this;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -55,7 +59,11 @@ public class ScoreManager : MonoBehaviour
 
     public void ShowGameOverUI()
     {
-        if (CheckHighScore()) newHighScore.SetActive(true);
+        if (CheckHighScore())
+        {
+            newHighScore.SetActive(true);
+            _audioSource.PlayOneShot(highScoreClip);
+        }
 
         scoreText.gameObject.SetActive(false);
 

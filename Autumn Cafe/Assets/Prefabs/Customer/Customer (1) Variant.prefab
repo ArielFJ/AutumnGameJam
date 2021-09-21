@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299a74494c3c3bc40993eba579123d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inkStories: []
+  importantInkStories: []
+  characterConversationSounds: []
   characterName: 
-  anim: {fileID: 0}
-  img: {fileID: 0}
 --- !u!1001 &2015425550078263888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22,6 +23,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7083216773953669031, guid: 17bd09df54d5eee40acbfad1fd76ef81, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 2625328532100380311, guid: 2608a2a61782235469e60cccc936d3f3, type: 2}
     - target: {fileID: 1630513958095405669, guid: 17bd09df54d5eee40acbfad1fd76ef81, type: 3}
       propertyPath: <MaxTime>k__BackingField
       value: 7
@@ -34,6 +39,14 @@ PrefabInstance:
       propertyPath: _name
       value: John
       objectReference: {fileID: 0}
+    - target: {fileID: 6941768998019363868, guid: 17bd09df54d5eee40acbfad1fd76ef81, type: 3}
+      propertyPath: _correctMealAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: e685b69e857a6a546b4d4b46cd084bf8, type: 3}
+    - target: {fileID: 6941768998019363868, guid: 17bd09df54d5eee40acbfad1fd76ef81, type: 3}
+      propertyPath: _incorrectMealAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: bfda50777b52bcd4e9bc76f67fc83a8d, type: 3}
     - target: {fileID: 6941768998019363868, guid: 17bd09df54d5eee40acbfad1fd76ef81, type: 3}
       propertyPath: _desiredMealSelectionTime.x
       value: 1

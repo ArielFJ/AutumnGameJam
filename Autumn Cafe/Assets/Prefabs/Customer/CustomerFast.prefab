@@ -119,6 +119,8 @@ MonoBehaviour:
   _desiredMeal: 0
   _desiredMealSelectionTime: {x: 0.5, y: 1.25}
   _characterScript: {fileID: 7611159353099388136}
+  _correctMealAudio: {fileID: 8300000, guid: e685b69e857a6a546b4d4b46cd084bf8, type: 3}
+  _incorrectMealAudio: {fileID: 8300000, guid: bfda50777b52bcd4e9bc76f67fc83a8d, type: 3}
 --- !u!195 &5624581378616400983
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -217,6 +219,7 @@ MonoBehaviour:
   patienceBarUIContainer: {fileID: 1791461886956129033}
   orderUIContainer: {fileID: 327316384619105304}
   orderIndicatorImage: {fileID: 1386227330548725857}
+  orderIndicatorText: {fileID: 398709103950408873}
 --- !u!1 &8449335537447849317
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,14 +289,14 @@ MonoBehaviour:
   - {fileID: 4900000, guid: c9e8a27e5a28a684ba5aed879b2c9b10, type: 3}
   importantInkStories: []
   characterConversationSounds:
-  - {fileID: 8300000, guid: 9658e90bc19b7dc49a3b0be3275c5405, type: 3}
-  - {fileID: 8300000, guid: f7d4d7bcc94a4354395d4a2c57ca42db, type: 3}
-  - {fileID: 8300000, guid: 53601ce952df62a4b8073d773be39fbb, type: 3}
-  - {fileID: 8300000, guid: 611dc7d172500ea48b08cb641c818d7e, type: 3}
-  - {fileID: 8300000, guid: bda489447e7db1b469484b09be28e2b3, type: 3}
-  - {fileID: 8300000, guid: 9a971abb3f42bc64dafd70bedf722b1d, type: 3}
-  - {fileID: 8300000, guid: a8b0a166fe73c004eae76eb595c5ebe4, type: 3}
-  - {fileID: 8300000, guid: 413487cbe924dcd4ebd237bba7f3fc3b, type: 3}
+  - {fileID: 8300000, guid: 4655bdf1586ac874190b42435640aa1d, type: 3}
+  - {fileID: 8300000, guid: 7246ca3e8e94c964c82bc31fa7d9cfd6, type: 3}
+  - {fileID: 8300000, guid: 94eb3d94c57e85b4aae7be5bdc467751, type: 3}
+  - {fileID: 8300000, guid: e07165418cddc5d46a2b1dec8cd8c16c, type: 3}
+  - {fileID: 8300000, guid: 47514feb6296b6c47a3ed8f8352553b2, type: 3}
+  - {fileID: 8300000, guid: 0b285aa719e5a9948a0f996a605af4c9, type: 3}
+  - {fileID: 8300000, guid: 6891a423524ad9b4aaa58db805ff1da4, type: 3}
+  - {fileID: 8300000, guid: 7d62d31f1a8e62d40aeed8f866b9aa20, type: 3}
   characterName: 
 --- !u!82 &1622867073381070623
 AudioSource:
@@ -527,5 +530,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &398709103950408873 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1031809603990819190, guid: 13023f27d19770347a05f3522b8def81, type: 3}
+  m_PrefabInstance: {fileID: 853931923793788383}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

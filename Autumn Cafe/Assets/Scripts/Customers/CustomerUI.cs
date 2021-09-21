@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class CustomerUI : MonoBehaviour
     [Header("Orders")]
     [SerializeField] private GameObject orderUIContainer;
     [SerializeField] private Image orderIndicatorImage;
+    [SerializeField] private TMP_Text orderIndicatorText;
 
     public void UpdateUI(MealType desiredMeal, bool isReadyToOrder)
     {
@@ -30,7 +32,17 @@ public class CustomerUI : MonoBehaviour
             }
         }
         var mealUIData = Resources.Load<DesiredMealUI_SO>(path);
-        orderIndicatorImage.sprite = mealUIData.mealSprite;
+        if (mealUIData)
+        {
+            orderIndicatorImage.sprite = mealUIData.mealSprite;
+            orderIndicatorText.gameObject.SetActive(false);
+        }
+        else
+        {
+            orderIndicatorText.gameObject.SetActive(true);
+            orderIndicatorImage.gameObject.SetActive(false);
+            orderIndicatorText.text = desiredMeal.ToString();
+        }
         orderUIContainer.SetActive(true);
     }
 
