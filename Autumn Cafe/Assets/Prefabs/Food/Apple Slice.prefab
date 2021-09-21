@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &468424504660839047
+--- !u!1 &4875013326384726561
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2874976639183729365}
-  - component: {fileID: 7168797328123326506}
-  - component: {fileID: 3000103027588341557}
-  - component: {fileID: 8572930875206736864}
-  - component: {fileID: 1241959177511761391}
-  - component: {fileID: 1045046745013598289}
-  - component: {fileID: 4171200075833093632}
+  - component: {fileID: 5254669861334112411}
+  - component: {fileID: 9170329342260696894}
+  - component: {fileID: 6388209538630853620}
+  - component: {fileID: 6929320836206819078}
+  - component: {fileID: 3506074882931842952}
+  - component: {fileID: 6328176689912872}
   m_Layer: 6
-  m_Name: Pumpkin (3)
+  m_Name: Apple Slice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2874976639183729365
+--- !u!4 &5254669861334112411
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468424504660839047}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 63.107, y: 0.99, z: 27.142}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_GameObject: {fileID: 4875013326384726561}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 49.78562, y: 0.7627931, z: 36.035774}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7168797328123326506
+--- !u!33 &9170329342260696894
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468424504660839047}
-  m_Mesh: {fileID: -3339082285309697363, guid: 8cc00a7d27d0e5a45ad4e175a764f3f6, type: 3}
---- !u!23 &3000103027588341557
+  m_GameObject: {fileID: 4875013326384726561}
+  m_Mesh: {fileID: -3339082285309697363, guid: 499c343e25de57e46bd1d8e1177fce07, type: 3}
+--- !u!23 &6388209538630853620
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468424504660839047}
+  m_GameObject: {fileID: 4875013326384726561}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -732078399479540074, guid: 23ef60d8b4abefd4bb95c38719b0007b, type: 3}
+  - {fileID: 2100000, guid: ad3304759d9c31c41a634bcbb60eb1db, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,13 +84,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &8572930875206736864
+--- !u!65 &6929320836206819078
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875013326384726561}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5297091, y: 0.20638236, z: 0.2626626}
+  m_Center: {x: -0.012049496, y: 0.002922367, z: 0.13450924}
+--- !u!114 &3506074882931842952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875013326384726561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560016bcaefc85b4392212f697dea89b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipText: Pumpkin Slice
+  canBeInspected: 1
+  canBeTrashed: 1
+--- !u!54 &6328176689912872
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468424504660839047}
+  m_GameObject: {fileID: 4875013326384726561}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -101,55 +128,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &1241959177511761391
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468424504660839047}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.6752126, y: 0.69231385, z: 0.6062178}
-  m_Center: {x: 0.012724325, y: 0.00000010430816, z: 0.3062555}
---- !u!114 &1045046745013598289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468424504660839047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 560016bcaefc85b4392212f697dea89b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tooltipText: Pie Pumpkin
-  canBeInspected: 1
-  canBeTrashed: 1
---- !u!114 &4171200075833093632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468424504660839047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21f65b61300068044aaf2330724bff6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radial: 0
-  health: 30
-  maxHealth: 30
-  Spawnables:
-  - spawnable: {fileID: 6190726020195438760, guid: a721af3e4d62d234a938a1f12e895e08, type: 3}
-    yRotationOffset: 40
-  - spawnable: {fileID: 6190726020195438760, guid: a721af3e4d62d234a938a1f12e895e08, type: 3}
-    yRotationOffset: -40
-  - spawnable: {fileID: 6190726020195438760, guid: a721af3e4d62d234a938a1f12e895e08, type: 3}
-    yRotationOffset: -80
-  - spawnable: {fileID: 6190726020195438760, guid: a721af3e4d62d234a938a1f12e895e08, type: 3}
-    yRotationOffset: 80

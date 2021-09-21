@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6190726020195438760
+--- !u!1 &4792224452528084730
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6819065766046075410}
-  - component: {fileID: 7569965733501404599}
-  - component: {fileID: 5686107837775475069}
-  - component: {fileID: 8531931913586255247}
-  - component: {fileID: 2803054050879409409}
-  - component: {fileID: 1610068993649725089}
+  - component: {fileID: 5317262504031734848}
+  - component: {fileID: 9107806243927344101}
+  - component: {fileID: 6449606359084119855}
+  - component: {fileID: 6346516052013541674}
+  - component: {fileID: 7529566237874155152}
   m_Layer: 6
-  m_Name: Pumpkin-Slice1
+  m_Name: Egg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6819065766046075410
+--- !u!4 &5317262504031734848
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6190726020195438760}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 62.5486, y: 0.551, z: 26.377316}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_GameObject: {fileID: 4792224452528084730}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 47.092, y: 2.373, z: 40.621}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7569965733501404599
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!33 &9107806243927344101
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6190726020195438760}
-  m_Mesh: {fileID: -3339082285309697363, guid: 499c343e25de57e46bd1d8e1177fce07, type: 3}
---- !u!23 &5686107837775475069
+  m_GameObject: {fileID: 4792224452528084730}
+  m_Mesh: {fileID: -2124705421725058983, guid: 47e725bc9aaff954995595d1363fbe7a, type: 3}
+--- !u!23 &6449606359084119855
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6190726020195438760}
+  m_GameObject: {fileID: 4792224452528084730}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1272091863510065872, guid: 63e3452d0aaaa6c47933a702760fa949, type: 3}
+  - {fileID: 8598954236217306308, guid: 47e725bc9aaff954995595d1363fbe7a, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,47 +83,31 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8531931913586255247
+--- !u!65 &6346516052013541674
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6190726020195438760}
+  m_GameObject: {fileID: 4792224452528084730}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5297091, y: 0.20638236, z: 0.2626626}
-  m_Center: {x: -0.012049496, y: 0.002922367, z: 0.13450924}
---- !u!114 &2803054050879409409
+  m_Size: {x: 0.115505576, y: 0.115227476, z: 0.15967762}
+  m_Center: {x: 0.00013905019, y: 0.000000014901165, z: 0.0032046891}
+--- !u!114 &7529566237874155152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6190726020195438760}
+  m_GameObject: {fileID: 4792224452528084730}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 560016bcaefc85b4392212f697dea89b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltipText: Pumpkin Slice
+  tooltipText: Egg
   canBeInspected: 1
   canBeTrashed: 1
---- !u!54 &1610068993649725089
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6190726020195438760}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1

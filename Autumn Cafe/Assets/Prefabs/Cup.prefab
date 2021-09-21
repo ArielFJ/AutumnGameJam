@@ -98,7 +98,42 @@ MonoBehaviour:
     - Tea
     Amounts:
     - 100
+    product: 8
+  - Ingredients:
+    - Coffee
+    Amounts:
+    - 100
+    product: 7
+  - Ingredients:
+    - Coffee
+    - Cream
+    Amounts:
+    - 60
+    - 40
+    product: 5
+  - Ingredients:
+    - Coffee
+    - Cream
+    - PumpkinSpice
+    Amounts:
+    - 60
+    - 30
+    - 10
     product: 6
+  - Ingredients:
+    - Tea
+    - Sugar
+    Amounts:
+    - 80
+    - 20
+    product: 9
+  - Ingredients:
+    - Coffee
+    - Sugar
+    Amounts:
+    - 80
+    - 20
+    product: 11
 --- !u!114 &950643799048702598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +210,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mealType: 0
+  maxScore: 100
+  scoreMultiplier: 1
 --- !u!1 &950643800217170979
 GameObject:
   m_ObjectHideFlags: 0
