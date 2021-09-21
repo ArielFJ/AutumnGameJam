@@ -103,6 +103,7 @@ public class DialogueManager : MonoBehaviour
             else
             {
                 characterPortrait.color = new Color32(255, 255, 255, 255);
+                activeCharacter.PlayRandomConversationSound();
             }
         }
         else

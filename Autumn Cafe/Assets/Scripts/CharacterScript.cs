@@ -4,18 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(AudioSource))]
 public class CharacterScript : MonoBehaviour
 {
     public TextAsset[] inkStories;
     public TextAsset[] importantInkStories;
+    public AudioClip[] characterConversationSounds;
     public string characterName;
-    public Animator anim;
+    
+    private Animator anim;
+    private AudioSource audioSource;
     //public Image img;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void PlayAnimation(string _name)
@@ -34,13 +39,19 @@ public class CharacterScript : MonoBehaviour
         }
     }
 
-    public TextAsset GetRandomStory() => GetRandomStoryFrom(inkStories);
-
-    public TextAsset GetRandomImportantStory() => GetRandomStoryFrom(importantInkStories);
-
-    private TextAsset GetRandomStoryFrom(TextAsset[] stories)
+    public void PlayRandomConversationSound()
     {
-        var index = Random.Range(0, stories.Length);
-        return stories[index];
+        var audioClip = GetRandomElementFrom(characterConversationSounds);
+        audioSource.PlayOneShot(audioClip);
+    }
+
+    public TextAsset GetRandomStory() => GetRandomElementFrom(inkStories);
+
+    public TextAsset GetRandomImportantStory() => GetRandomElementFrom(importantInkStories);
+
+    private TElement GetRandomElementFrom<TElement>(TElement[] elements)
+    {
+        var index = Random.Range(0, elements.Length);
+        return elements[index];
     }
 }
