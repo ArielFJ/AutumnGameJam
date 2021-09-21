@@ -10,7 +10,6 @@ public class musicPlayer : Interactible
 
     public AudioSource audioSource;
     public List<AudioClip> songs = new List<AudioClip>();
-    public float volume;
     private float trackTimer;
     public int songsPlayed;
     private bool[] beenPlayed;
@@ -34,7 +33,6 @@ public class musicPlayer : Interactible
     {
         current = audioSource.clip;
 
-        audioSource.volume = volume;
         if (audioSource.isPlaying)
             trackTimer += 1 * Time.deltaTime;
 
