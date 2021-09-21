@@ -343,7 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.49056602, g: 0.28984186, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -692,7 +692,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e74479571dde31c4faa8829d6f8451e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _volumeMultiplier: 25
   _generalAudioMixer: {fileID: 24100000, guid: 2608a2a61782235469e60cccc936d3f3, type: 2}
   _masterVolumeSlider: {fileID: 7033363089407737051}
   _musicVolumeSlider: {fileID: 5518119459697285549}
@@ -989,7 +988,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8e2ca54f4d1e24971a83483bbf303a0c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 099c91f954ba14b3a840b638607fcb0d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1666,7 +1665,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 23.5, y: 1.059967}
-  m_SizeDelta: {x: 55, y: 55}
+  m_SizeDelta: {x: 38, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5518119461270654173
 CanvasRenderer:
@@ -1696,7 +1695,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bb88c0d3b46b340a38d260d5c455daa9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 58c88aef05a33426c82ea7b18ebc0427, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -14,7 +14,7 @@ public class MainMenuUiManager : MonoBehaviour
     {
         _originalOptionsPosition = _optionsUI.transform.position;
         _optionsUI.transform.DOMoveX(-Screen.width / 2, 0);
-        _optionsUI.SetActive(false);
+        //_optionsUI.SetActive(false);
     }
 
     public void GoToOptions()

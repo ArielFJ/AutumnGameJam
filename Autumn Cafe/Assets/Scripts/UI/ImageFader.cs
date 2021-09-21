@@ -42,7 +42,8 @@ public class ImageFader : MonoBehaviour
         _image
             .DOFade(0, _fadeInDuration)
             .SetUpdate(true)
-            .OnComplete(() => onFadeInEnded?.Invoke());
+            .OnComplete(() => onFadeInEnded?.Invoke())
+            .OnKill(() => _image.color = new Color(color.r, color.g, color.b, 0));
     }
 
     public void FadeOut()
@@ -54,6 +55,7 @@ public class ImageFader : MonoBehaviour
         _image
             .DOFade(1, _fadeOutDuration)
             .SetUpdate(true)
-            .OnComplete(() => onFadeOutEnded?.Invoke());
+            .OnComplete(() => onFadeOutEnded?.Invoke())
+            .OnKill(() => _image.color = new Color(color.r, color.g, color.b, 1));
     }
 }

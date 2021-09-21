@@ -125,7 +125,7 @@ public class PickUpAndInteract : MonoBehaviour
                 if (Physics.Raycast(cam.position, cam.forward, out toolHit, pickupDistance, customerMask))
                 {
                     var customer = toolHit.collider.GetComponent<Customer>();
-                    if (customer)
+                    if (customer && customer.IsWaitingForFood)
                     {
                         tooltipText.text = $"E: Talk To {customer.Name}";
                         tooltipText.color = new Color32(221, 119, 93, 200);
