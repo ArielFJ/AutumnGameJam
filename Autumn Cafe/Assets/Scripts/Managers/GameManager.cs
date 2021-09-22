@@ -120,10 +120,10 @@ public class GameManager : MonoBehaviour
 
     public void PrepareToPlay()
     {
-        Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
+        State = GameStateType.Playing;
         _fpsController?.Activate();
     }
 

@@ -4761,7 +4761,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chocolate Bar
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8508162111552969178, guid: 20234463e6395bf4984a4d2efcd4ed9d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508162111552969178, guid: 20234463e6395bf4984a4d2efcd4ed9d, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8508162111552969178, guid: 20234463e6395bf4984a4d2efcd4ed9d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 20234463e6395bf4984a4d2efcd4ed9d, type: 3}
 --- !u!1 &1972154865
 GameObject:
