@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.28502697, g: 0.37139347, b: 0.49601266, a: 1}
+  m_IndirectSpecularColor: {r: 0.2850269, g: 0.3713935, b: 0.49601045, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15400,11 +15400,13 @@ MonoBehaviour:
     - {fileID: 4875013326384726561, guid: 17d4b40646d6c99449f4890eb45658c7, type: 3}
     - {fileID: 4875013326384726561, guid: 17d4b40646d6c99449f4890eb45658c7, type: 3}
     - {fileID: 7867112084055802359, guid: 0e5e10a79b58379478162ed0ca9e9bb0, type: 3}
+    - {fileID: 4792224452528084730, guid: 0f6d0aedc44786945b77fc62a018a1fb, type: 3}
     targetMixAmount: 1200
     product: {fileID: 2219614449452411344, guid: 695953102ee68214aab9fca0dd58ddc6, type: 3}
   - Ingredients:
     - {fileID: 7606755265257539363, guid: 20234463e6395bf4984a4d2efcd4ed9d, type: 3}
     - {fileID: 4792224452528084730, guid: 0f6d0aedc44786945b77fc62a018a1fb, type: 3}
+    - {fileID: 7867112084055802359, guid: 0e5e10a79b58379478162ed0ca9e9bb0, type: 3}
     targetMixAmount: 1000
     product: {fileID: 4516791480035227795, guid: b4e339448e8545c4cb5845b473abce58, type: 3}
 --- !u!65 &1800898101
