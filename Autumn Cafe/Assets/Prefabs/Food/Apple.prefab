@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6912905240255635831}
   - component: {fileID: 4212781925317981851}
   - component: {fileID: 2097228141098993452}
+  - component: {fileID: 4160590431686003916}
   m_Layer: 6
   m_Name: Apple
   m_TagString: Untagged
@@ -129,3 +130,27 @@ MonoBehaviour:
   tooltipText: Apple
   canBeInspected: 1
   canBeTrashed: 1
+--- !u!114 &4160590431686003916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3657648566749209521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f65b61300068044aaf2330724bff6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radial: 0
+  health: 10
+  maxHealth: 10
+  Spawnables:
+  - spawnable: {fileID: 4875013326384726561, guid: 17d4b40646d6c99449f4890eb45658c7, type: 3}
+    yRotationOffset: 90
+  - spawnable: {fileID: 4875013326384726561, guid: 17d4b40646d6c99449f4890eb45658c7, type: 3}
+    yRotationOffset: 180
+  - spawnable: {fileID: 4875013326384726561, guid: 17d4b40646d6c99449f4890eb45658c7, type: 3}
+    yRotationOffset: 270
+  - spawnable: {fileID: 4875013326384726561, guid: 17d4b40646d6c99449f4890eb45658c7, type: 3}
+    yRotationOffset: 0

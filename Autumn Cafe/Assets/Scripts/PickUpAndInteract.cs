@@ -200,6 +200,7 @@ public class PickUpAndInteract : MonoBehaviour
                 if (hit.collider.gameObject.GetComponent<BakingSlot>().occupant)
                 {
                     heldItem = hit.collider.gameObject.GetComponent<BakingSlot>().occupant;
+                    heldItem.transform.parent = null;
                     heldItem.GetComponent<Bakeable>().slotOccupying.occupant = null;
                     heldItem.GetComponent<Bakeable>().slotOccupying = null;
                 }
@@ -393,13 +394,9 @@ public class PickUpAndInteract : MonoBehaviour
         slot.occupant = heldItem;
         heldItem.GetComponent<Bakeable>().slotOccupying = slot;
 
-        float heldObjectBoundsY = heldItem.GetComponent<Collider>().bounds.size.y;
-
-        heldObjectBoundsY += slot.transform.position.y;
-
-        Vector3 placePos = new Vector3(slot.transform.position.x, heldObjectBoundsY, slot.transform.position.z);
-
+        Vector3 placePos = slot.transform.position;
         heldItem.transform.position = placePos;
+        heldItem.transform.rotation = Quaternion.Euler(-90,90,0);
         heldItem = null;
     }
 

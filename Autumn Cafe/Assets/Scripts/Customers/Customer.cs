@@ -7,18 +7,22 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(Timer))]
 [RequireComponent(typeof(CustomerUI))]
+[RequireComponent(typeof(AudioSource))]
 public class Customer : MonoBehaviour
 {
     [SerializeField] private string _name = "Bill";
     [SerializeField] private MealType _desiredMeal;
     [SerializeField] private Vector2 _desiredMealSelectionTime;
     [SerializeField] private CharacterScript _characterScript;
+    [SerializeField] private AudioClip _correctMealAudio;
+    [SerializeField] private AudioClip _incorrectMealAudio;
 
     public DateTime StoreArrivalTime { get; set; }
 
     private NavMeshAgent _agent;
     private Timer _timer;
     private CustomerUI _customerUI;
+    private AudioSource _audioSource;
 
     private Chair _currentChair;
     private int _originalLayerMask;
@@ -45,6 +49,7 @@ public class Customer : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _timer = GetComponent<Timer>();
         _customerUI = GetComponent<CustomerUI>();
+        _audioSource = GetComponent<AudioSource>();
 
         if (_characterScript) _characterScript.characterName = _name;
 
@@ -190,6 +195,7 @@ public class Customer : MonoBehaviour
         {
             Debug.Log($"{_name} is satisfied with your services");
             _currentChair.LocateInMealSpace(meal.gameObject);
+            _audioSource.PlayOneShot(_correctMealAudio);
             CheckMealQuality();
             //ManageDialog();
 
@@ -201,6 +207,7 @@ public class Customer : MonoBehaviour
         else
         {
             Debug.Log($"{_name} didn't asked for {meal.mealType}");
+            _audioSource.PlayOneShot(_incorrectMealAudio);
             Destroy(meal.gameObject);
         }
 

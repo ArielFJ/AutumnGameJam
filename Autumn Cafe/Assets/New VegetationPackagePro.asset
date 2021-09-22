@@ -1,0 +1,899 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1187c6f5a2aa584084ba67ab2162dbf, type: 3}
+  m_Name: New VegetationPackagePro
+  m_EditorClassIdentifier: 
+  PackageName: No name
+  VegetationInfoList:
+  - VegetationItemID: 4137d725-f12d-4e78-b2a9-12736838a44e
+    Name: Tree_1 4_Merged 1
+    VegetationType: 2
+    PrefabType: 0
+    VegetationRenderMode: 1
+    EnableRuntimeSpawn: 1
+    DisableShadows: 0
+    VegetationPrefab: {fileID: 5934745402234321632, guid: 5a4fb53934f9b8d4c99c3773b8815b67, type: 3}
+    VegetationTexture: {fileID: 0}
+    VegetationGuid: 5a4fb53934f9b8d4c99c3773b8815b67
+    SampleDistance: 7.734991
+    Density: 0.65
+    RandomizePosition: 1
+    UseVegetationMasksOnStorage: 0
+    UseSamplePointOffset: 0
+    SamplePointMinOffset: 3
+    SamplePointMaxOffset: 5
+    Offset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    Rotation: 0
+    MinUpOffset: 0
+    MaxUpOffset: 0
+    Bounds:
+      m_Center: {x: -0.21376705, y: 6.1768146, z: -0.23846245}
+      m_Extent: {x: 6.614547, y: 6.1768146, z: 6.4538956}
+    ScaleMultiplier: {x: 1, y: 1, z: 1}
+    RenderDistanceFactor: 1
+    Seed: 66
+    MinScale: 0.2
+    MaxScale: 1.1
+    YScale: 1
+    ColliderType: 0
+    ColliderRadius: 0.25
+    ColliderHeight: 2
+    ColliderOffset: {x: 0, y: 0, z: 0}
+    ColliderSize: {x: 1, y: 1, z: 1}
+    ColliderTrigger: 0
+    ColliderMesh: {fileID: 0}
+    ColliderUseForBake: 1
+    ColliderDistanceFactor: 0.15
+    ColliderTag: 
+    ColliderConvex: 0
+    NavMeshObstacleType: 0
+    NavMeshObstacleCenter: {x: 0, y: 0, z: 0}
+    NavMeshObstacleSize: {x: 1, y: 1, z: 1}
+    NavMeshObstacleRadius: 0.5
+    NavMeshObstacleHeight: 2
+    NavMeshObstacleCarve: 1
+    NavMeshArea: 0
+    UseBillboards: 1
+    BillboardQuality: 0
+    BillboardTexture: {fileID: 2800000, guid: dcb9301508c215242ab1177424edc20c, type: 3}
+    BillboardNormalTexture: {fileID: 2800000, guid: 500390a0d41cd8643bac223bcf32103a, type: 3}
+    BillboardAoTexture: {fileID: 0}
+    BillboardSourceLODLevel: 0
+    BillboardColorSpace: 1
+    BillboardBrightness: 1
+    BillboardCutoff: 0.2
+    BillboardTintColor: {r: 0.356879, g: 0.4716981, b: 0.21137415, a: 1}
+    BillboardAtlasBackgroundColor: {r: 0.3137255, g: 0.3137255, b: 0.078431375, a: 1}
+    BillboardMipmapBias: -2
+    BillboardWindSpeed: 1
+    BillboardSmoothness: 0.2
+    BillboardMetallic: 0.5
+    BillboardSpecular: 0
+    BillboardOcclusion: 1
+    BillboardNormalStrength: 1
+    BillboardShadowOffset: 2
+    BillboardRecalculateNormals: 0
+    BillboardNormalBlendFactor: 1
+    BillboardRenderMode: 1
+    BillboardFlipBackNormals: 0
+    BillboardFadeDistance: 5
+    UseBillboardFade: 1
+    OverrideShaderController: 0
+    UseBillboardSnow: 0
+    UseBillboardWind: 0
+    BillboardVersion: 2
+    UseHeightRule: 1
+    MinHeight: 0
+    MaxHeight: 1500
+    UseAdvancedHeightRule: 0
+    MaxCurveHeight: 500
+    HeightRuleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    UseSteepnessRule: 1
+    MinSteepness: 0
+    MaxSteepness: 30
+    UseAdvancedSteepnessRule: 0
+    SteepnessRuleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    UseNoiseCutoff: 1
+    NoiseCutoffValue: 0.5
+    NoiseCutoffScale: 101
+    NoiseCutoffInverse: 1
+    NoiseCutoffOffset: {x: 0, y: 0}
+    UseNoiseDensity: 1
+    NoiseDensityScale: 146
+    NoiseDensityInverse: 1
+    NoiseDensityOffset: {x: 0, y: 0}
+    UseNoiseScaleRule: 0
+    NoiseScaleMinScale: 0.7
+    NoiseScaleMaxScale: 1.3
+    NoiseScaleScale: 5
+    NoiseScaleInverse: 1
+    NoiseScaleOffset: {x: 0, y: 0}
+    UseBiomeEdgeScaleRule: 0
+    BiomeEdgeScaleDistance: 10
+    BiomeEdgeScaleMinScale: 0.3
+    BiomeEdgeScaleMaxScale: 1
+    BiomeEdgeScaleInverse: 0
+    UseBiomeEdgeIncludeRule: 0
+    BiomeEdgeIncludeDistance: 10
+    BiomeEdgeIncludeInverse: 0
+    UseConcaveLocationRule: 0
+    ConcaveLocationInverse: 0
+    ConcaveLoactionMinHeightDifference: 1
+    ConcaveLoactionDistance: 3
+    ConcaveLoactionAverage: 1
+    UseTerrainTextureIncludeRules: 0
+    TerrainTextureIncludeRuleList: []
+    UseTerrainTextureExcludeRules: 0
+    TerrainTextureExcludeRuleList: []
+    UseTextureMaskIncludeRules: 0
+    TextureMaskIncludeRuleList: []
+    UseTextureMaskExcludeRules: 0
+    TextureMaskExcludeRuleList: []
+    UseTextureMaskScaleRules: 0
+    TextureMaskScaleRuleList: []
+    UseTextureMaskDensityRules: 0
+    TextureMaskDensityRuleList: []
+    ShaderName: Universal Render Pipeline/Nature/SpeedTree7
+    ShaderControllerSettings:
+      ControlerPropertyList: []
+      Heading: 
+      Description: 
+      SupportsInstantIndirect: 0
+      LODFadeCrossfade: 0
+      LODFadePercentage: 0
+      SampleWind: 0
+      UpdateWind: 0
+      DynamicHUE: 0
+      BillboardSnow: 0
+      BillboardHDWind: 0
+      OverrideBillboardAtlasShader: 
+      OverrideBillboardAtlasNormalShader: 
+      BillboardRenderMode: 1
+    UseTerrainSourceIncludeRule: 0
+    TerrainSourceIncludeRule:
+      UseTerrainSourceID1: 0
+      UseTerrainSourceID2: 0
+      UseTerrainSourceID3: 0
+      UseTerrainSourceID4: 0
+      UseTerrainSourceID5: 0
+      UseTerrainSourceID6: 0
+      UseTerrainSourceID7: 0
+      UseTerrainSourceID8: 0
+    UseTerrainSourceExcludeRule: 0
+    TerrainSourceExcludeRule:
+      UseTerrainSourceID1: 0
+      UseTerrainSourceID2: 0
+      UseTerrainSourceID3: 0
+      UseTerrainSourceID4: 0
+      UseTerrainSourceID5: 0
+      UseTerrainSourceID6: 0
+      UseTerrainSourceID7: 0
+      UseTerrainSourceID8: 0
+    DisableLOD: 0
+    LODFactor: 1
+    UseDistanceFalloff: 0
+    DistanceFalloffStartDistance: 0.4
+    UseVegetationMask: 0
+    VegetationTypeIndex: 1
+    RuntimePrefabRuleList: []
+    EnableCrossFade: 0
+  - VegetationItemID: c7486f4b-4118-40dd-9700-1494a4e8582d
+    Name: Tree_1 4_Merged 2
+    VegetationType: 2
+    PrefabType: 0
+    VegetationRenderMode: 1
+    EnableRuntimeSpawn: 1
+    DisableShadows: 0
+    VegetationPrefab: {fileID: 3015200984447957643, guid: 42be73474b2ca5942a6e82902f16238b, type: 3}
+    VegetationTexture: {fileID: 0}
+    VegetationGuid: 42be73474b2ca5942a6e82902f16238b
+    SampleDistance: 7.6066494
+    Density: 0.55
+    RandomizePosition: 1
+    UseVegetationMasksOnStorage: 0
+    UseSamplePointOffset: 0
+    SamplePointMinOffset: 3
+    SamplePointMaxOffset: 5
+    Offset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    Rotation: 0
+    MinUpOffset: 0
+    MaxUpOffset: 0
+    Bounds:
+      m_Center: {x: -0.21376705, y: 6.1768146, z: -0.23846245}
+      m_Extent: {x: 6.614547, y: 6.1768146, z: 6.4538956}
+    ScaleMultiplier: {x: 1, y: 1, z: 1}
+    RenderDistanceFactor: 1
+    Seed: 9
+    MinScale: 0.2
+    MaxScale: 1.1
+    YScale: 1
+    ColliderType: 0
+    ColliderRadius: 0.25
+    ColliderHeight: 2
+    ColliderOffset: {x: 0, y: 0, z: 0}
+    ColliderSize: {x: 1, y: 1, z: 1}
+    ColliderTrigger: 0
+    ColliderMesh: {fileID: 0}
+    ColliderUseForBake: 1
+    ColliderDistanceFactor: 0.15
+    ColliderTag: 
+    ColliderConvex: 0
+    NavMeshObstacleType: 0
+    NavMeshObstacleCenter: {x: 0, y: 0, z: 0}
+    NavMeshObstacleSize: {x: 1, y: 1, z: 1}
+    NavMeshObstacleRadius: 0.5
+    NavMeshObstacleHeight: 2
+    NavMeshObstacleCarve: 1
+    NavMeshArea: 0
+    UseBillboards: 1
+    BillboardQuality: 0
+    BillboardTexture: {fileID: 2800000, guid: 8ffdc58a2cb5b4941b2fbc5110442d0f, type: 3}
+    BillboardNormalTexture: {fileID: 2800000, guid: ef08ab5af80dea14082511a7c2e86823, type: 3}
+    BillboardAoTexture: {fileID: 0}
+    BillboardSourceLODLevel: 0
+    BillboardColorSpace: 1
+    BillboardBrightness: 1
+    BillboardCutoff: 0.2
+    BillboardTintColor: {r: 1, g: 0.48383763, b: 0.2216981, a: 1}
+    BillboardAtlasBackgroundColor: {r: 0.3137255, g: 0.3137255, b: 0.078431375, a: 1}
+    BillboardMipmapBias: -2
+    BillboardWindSpeed: 1
+    BillboardSmoothness: 0.2
+    BillboardMetallic: 0.5
+    BillboardSpecular: 0
+    BillboardOcclusion: 1
+    BillboardNormalStrength: 1
+    BillboardShadowOffset: 2
+    BillboardRecalculateNormals: 0
+    BillboardNormalBlendFactor: 1
+    BillboardRenderMode: 1
+    BillboardFlipBackNormals: 0
+    BillboardFadeDistance: 5
+    UseBillboardFade: 1
+    OverrideShaderController: 0
+    UseBillboardSnow: 0
+    UseBillboardWind: 0
+    BillboardVersion: 2
+    UseHeightRule: 1
+    MinHeight: 0
+    MaxHeight: 1500
+    UseAdvancedHeightRule: 0
+    MaxCurveHeight: 500
+    HeightRuleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    UseSteepnessRule: 1
+    MinSteepness: 0
+    MaxSteepness: 30
+    UseAdvancedSteepnessRule: 0
+    SteepnessRuleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    UseNoiseCutoff: 0
+    NoiseCutoffValue: 0.5
+    NoiseCutoffScale: 5
+    NoiseCutoffInverse: 0
+    NoiseCutoffOffset: {x: 0, y: 0}
+    UseNoiseDensity: 1
+    NoiseDensityScale: 5
+    NoiseDensityInverse: 0
+    NoiseDensityOffset: {x: 0, y: 0}
+    UseNoiseScaleRule: 0
+    NoiseScaleMinScale: 0.7
+    NoiseScaleMaxScale: 1.3
+    NoiseScaleScale: 5
+    NoiseScaleInverse: 0
+    NoiseScaleOffset: {x: 0, y: 0}
+    UseBiomeEdgeScaleRule: 0
+    BiomeEdgeScaleDistance: 10
+    BiomeEdgeScaleMinScale: 0.3
+    BiomeEdgeScaleMaxScale: 1
+    BiomeEdgeScaleInverse: 0
+    UseBiomeEdgeIncludeRule: 0
+    BiomeEdgeIncludeDistance: 10
+    BiomeEdgeIncludeInverse: 0
+    UseConcaveLocationRule: 0
+    ConcaveLocationInverse: 0
+    ConcaveLoactionMinHeightDifference: 1
+    ConcaveLoactionDistance: 3
+    ConcaveLoactionAverage: 1
+    UseTerrainTextureIncludeRules: 0
+    TerrainTextureIncludeRuleList: []
+    UseTerrainTextureExcludeRules: 0
+    TerrainTextureExcludeRuleList: []
+    UseTextureMaskIncludeRules: 0
+    TextureMaskIncludeRuleList: []
+    UseTextureMaskExcludeRules: 0
+    TextureMaskExcludeRuleList: []
+    UseTextureMaskScaleRules: 0
+    TextureMaskScaleRuleList: []
+    UseTextureMaskDensityRules: 0
+    TextureMaskDensityRuleList: []
+    ShaderName: Universal Render Pipeline/Nature/SpeedTree7
+    ShaderControllerSettings:
+      ControlerPropertyList: []
+      Heading: 
+      Description: 
+      SupportsInstantIndirect: 0
+      LODFadeCrossfade: 0
+      LODFadePercentage: 0
+      SampleWind: 0
+      UpdateWind: 0
+      DynamicHUE: 0
+      BillboardSnow: 0
+      BillboardHDWind: 0
+      OverrideBillboardAtlasShader: 
+      OverrideBillboardAtlasNormalShader: 
+      BillboardRenderMode: 1
+    UseTerrainSourceIncludeRule: 0
+    TerrainSourceIncludeRule:
+      UseTerrainSourceID1: 0
+      UseTerrainSourceID2: 0
+      UseTerrainSourceID3: 0
+      UseTerrainSourceID4: 0
+      UseTerrainSourceID5: 0
+      UseTerrainSourceID6: 0
+      UseTerrainSourceID7: 0
+      UseTerrainSourceID8: 0
+    UseTerrainSourceExcludeRule: 0
+    TerrainSourceExcludeRule:
+      UseTerrainSourceID1: 0
+      UseTerrainSourceID2: 0
+      UseTerrainSourceID3: 0
+      UseTerrainSourceID4: 0
+      UseTerrainSourceID5: 0
+      UseTerrainSourceID6: 0
+      UseTerrainSourceID7: 0
+      UseTerrainSourceID8: 0
+    DisableLOD: 0
+    LODFactor: 1
+    UseDistanceFalloff: 0
+    DistanceFalloffStartDistance: 0.4
+    UseVegetationMask: 0
+    VegetationTypeIndex: 1
+    RuntimePrefabRuleList: []
+    EnableCrossFade: 0
+  - VegetationItemID: f01927a2-5210-46b8-8d06-3cf66f3c8133
+    Name: Tree_1 4_Merged 3
+    VegetationType: 2
+    PrefabType: 0
+    VegetationRenderMode: 1
+    EnableRuntimeSpawn: 1
+    DisableShadows: 0
+    VegetationPrefab: {fileID: 6363842841819918128, guid: 74cdf9d95fbb2854f99a3eabbf4c92c6, type: 3}
+    VegetationTexture: {fileID: 0}
+    VegetationGuid: 74cdf9d95fbb2854f99a3eabbf4c92c6
+    SampleDistance: 8.263618
+    Density: 0.45
+    RandomizePosition: 1
+    UseVegetationMasksOnStorage: 0
+    UseSamplePointOffset: 0
+    SamplePointMinOffset: 3
+    SamplePointMaxOffset: 5
+    Offset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    Rotation: 0
+    MinUpOffset: 0
+    MaxUpOffset: 0
+    Bounds:
+      m_Center: {x: -0.21376705, y: 6.1768146, z: -0.23846245}
+      m_Extent: {x: 6.614547, y: 6.1768146, z: 6.4538956}
+    ScaleMultiplier: {x: 1, y: 1, z: 1}
+    RenderDistanceFactor: 1
+    Seed: 31
+    MinScale: 0.2
+    MaxScale: 1.1
+    YScale: 1
+    ColliderType: 0
+    ColliderRadius: 0.25
+    ColliderHeight: 2
+    ColliderOffset: {x: 0, y: 0, z: 0}
+    ColliderSize: {x: 1, y: 1, z: 1}
+    ColliderTrigger: 0
+    ColliderMesh: {fileID: 0}
+    ColliderUseForBake: 1
+    ColliderDistanceFactor: 0.15
+    ColliderTag: 
+    ColliderConvex: 0
+    NavMeshObstacleType: 0
+    NavMeshObstacleCenter: {x: 0, y: 0, z: 0}
+    NavMeshObstacleSize: {x: 1, y: 1, z: 1}
+    NavMeshObstacleRadius: 0.5
+    NavMeshObstacleHeight: 2
+    NavMeshObstacleCarve: 1
+    NavMeshArea: 0
+    UseBillboards: 1
+    BillboardQuality: 0
+    BillboardTexture: {fileID: 2800000, guid: 2851852ad5f308c468ab5e8a9bab28bc, type: 3}
+    BillboardNormalTexture: {fileID: 2800000, guid: 399a811d4f52b53409414c3ca7521fbd, type: 3}
+    BillboardAoTexture: {fileID: 0}
+    BillboardSourceLODLevel: 0
+    BillboardColorSpace: 1
+    BillboardBrightness: 1
+    BillboardCutoff: 0.2
+    BillboardTintColor: {r: 0.78431374, g: 0.24705882, b: 0.2581508, a: 1}
+    BillboardAtlasBackgroundColor: {r: 0.3137255, g: 0.3137255, b: 0.078431375, a: 1}
+    BillboardMipmapBias: -2
+    BillboardWindSpeed: 1
+    BillboardSmoothness: 0.2
+    BillboardMetallic: 0.5
+    BillboardSpecular: 0
+    BillboardOcclusion: 1
+    BillboardNormalStrength: 1
+    BillboardShadowOffset: 2
+    BillboardRecalculateNormals: 0
+    BillboardNormalBlendFactor: 1
+    BillboardRenderMode: 1
+    BillboardFlipBackNormals: 0
+    BillboardFadeDistance: 5
+    UseBillboardFade: 1
+    OverrideShaderController: 0
+    UseBillboardSnow: 0
+    UseBillboardWind: 0
+    BillboardVersion: 2
+    UseHeightRule: 1
+    MinHeight: 0
+    MaxHeight: 1500
+    UseAdvancedHeightRule: 0
+    MaxCurveHeight: 500
+    HeightRuleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    UseSteepnessRule: 1
+    MinSteepness: 0
+    MaxSteepness: 30
+    UseAdvancedSteepnessRule: 0
+    SteepnessRuleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    UseNoiseCutoff: 0
+    NoiseCutoffValue: 0.24
+    NoiseCutoffScale: 50
+    NoiseCutoffInverse: 0
+    NoiseCutoffOffset: {x: 0, y: 0}
+    UseNoiseDensity: 1
+    NoiseDensityScale: 8
+    NoiseDensityInverse: 1
+    NoiseDensityOffset: {x: 8, y: 8}
+    UseNoiseScaleRule: 0
+    NoiseScaleMinScale: 0.7
+    NoiseScaleMaxScale: 1.3
+    NoiseScaleScale: 5
+    NoiseScaleInverse: 0
+    NoiseScaleOffset: {x: 0, y: 0}
+    UseBiomeEdgeScaleRule: 0
+    BiomeEdgeScaleDistance: 10
+    BiomeEdgeScaleMinScale: 0.3
+    BiomeEdgeScaleMaxScale: 1
+    BiomeEdgeScaleInverse: 0
+    UseBiomeEdgeIncludeRule: 0
+    BiomeEdgeIncludeDistance: 10
+    BiomeEdgeIncludeInverse: 0
+    UseConcaveLocationRule: 0
+    ConcaveLocationInverse: 0
+    ConcaveLoactionMinHeightDifference: 1
+    ConcaveLoactionDistance: 3
+    ConcaveLoactionAverage: 1
+    UseTerrainTextureIncludeRules: 0
+    TerrainTextureIncludeRuleList: []
+    UseTerrainTextureExcludeRules: 0
+    TerrainTextureExcludeRuleList: []
+    UseTextureMaskIncludeRules: 0
+    TextureMaskIncludeRuleList: []
+    UseTextureMaskExcludeRules: 0
+    TextureMaskExcludeRuleList: []
+    UseTextureMaskScaleRules: 0
+    TextureMaskScaleRuleList: []
+    UseTextureMaskDensityRules: 0
+    TextureMaskDensityRuleList: []
+    ShaderName: Universal Render Pipeline/Nature/SpeedTree7
+    ShaderControllerSettings:
+      ControlerPropertyList: []
+      Heading: 
+      Description: 
+      SupportsInstantIndirect: 0
+      LODFadeCrossfade: 0
+      LODFadePercentage: 0
+      SampleWind: 0
+      UpdateWind: 0
+      DynamicHUE: 0
+      BillboardSnow: 0
+      BillboardHDWind: 0
+      OverrideBillboardAtlasShader: 
+      OverrideBillboardAtlasNormalShader: 
+      BillboardRenderMode: 1
+    UseTerrainSourceIncludeRule: 0
+    TerrainSourceIncludeRule:
+      UseTerrainSourceID1: 0
+      UseTerrainSourceID2: 0
+      UseTerrainSourceID3: 0
+      UseTerrainSourceID4: 0
+      UseTerrainSourceID5: 0
+      UseTerrainSourceID6: 0
+      UseTerrainSourceID7: 0
+      UseTerrainSourceID8: 0
+    UseTerrainSourceExcludeRule: 0
+    TerrainSourceExcludeRule:
+      UseTerrainSourceID1: 0
+      UseTerrainSourceID2: 0
+      UseTerrainSourceID3: 0
+      UseTerrainSourceID4: 0
+      UseTerrainSourceID5: 0
+      UseTerrainSourceID6: 0
+      UseTerrainSourceID7: 0
+      UseTerrainSourceID8: 0
+    DisableLOD: 0
+    LODFactor: 1
+    UseDistanceFalloff: 0
+    DistanceFalloffStartDistance: 0.4
+    UseVegetationMask: 0
+    VegetationTypeIndex: 1
+    RuntimePrefabRuleList: []
+    EnableCrossFade: 0
+  - VegetationItemID: 44428828-b256-4498-a7ba-c92dd18371c6
+    Name: Tree_1 4_Merged 4
+    VegetationType: 2
+    PrefabType: 0
+    VegetationRenderMode: 1
+    EnableRuntimeSpawn: 1
+    DisableShadows: 0
+    VegetationPrefab: {fileID: 4723204079337339374, guid: 0bc5e4db31d5ea34c8efb556d4673457, type: 3}
+    VegetationTexture: {fileID: 0}
+    VegetationGuid: 0bc5e4db31d5ea34c8efb556d4673457
+    SampleDistance: 8.639751
+    Density: 0.4
+    RandomizePosition: 1
+    UseVegetationMasksOnStorage: 0
+    UseSamplePointOffset: 0
+    SamplePointMinOffset: 3
+    SamplePointMaxOffset: 5
+    Offset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    Rotation: 0
+    MinUpOffset: 0
+    MaxUpOffset: 0
+    Bounds:
+      m_Center: {x: -0.21376705, y: 6.1768146, z: -0.23846245}
+      m_Extent: {x: 6.614547, y: 6.1768146, z: 6.4538956}
+    ScaleMultiplier: {x: 1, y: 1, z: 1}
+    RenderDistanceFactor: 1
+    Seed: 33
+    MinScale: 0.2
+    MaxScale: 1.1
+    YScale: 1
+    ColliderType: 0
+    ColliderRadius: 0.25
+    ColliderHeight: 2
+    ColliderOffset: {x: 0, y: 0, z: 0}
+    ColliderSize: {x: 1, y: 1, z: 1}
+    ColliderTrigger: 0
+    ColliderMesh: {fileID: 0}
+    ColliderUseForBake: 1
+    ColliderDistanceFactor: 0.15
+    ColliderTag: 
+    ColliderConvex: 0
+    NavMeshObstacleType: 0
+    NavMeshObstacleCenter: {x: 0, y: 0, z: 0}
+    NavMeshObstacleSize: {x: 1, y: 1, z: 1}
+    NavMeshObstacleRadius: 0.5
+    NavMeshObstacleHeight: 2
+    NavMeshObstacleCarve: 1
+    NavMeshArea: 0
+    UseBillboards: 1
+    BillboardQuality: 0
+    BillboardTexture: {fileID: 2800000, guid: deaccf537ada61442aaf6dc07b530944, type: 3}
+    BillboardNormalTexture: {fileID: 2800000, guid: 68fa025e660a4ee4ca41b68b9b0bce01, type: 3}
+    BillboardAoTexture: {fileID: 0}
+    BillboardSourceLODLevel: 0
+    BillboardColorSpace: 1
+    BillboardBrightness: 1
+    BillboardCutoff: 0.2
+    BillboardTintColor: {r: 1, g: 0.70333135, b: 0.2588235, a: 1}
+    BillboardAtlasBackgroundColor: {r: 0.3137255, g: 0.3137255, b: 0.078431375, a: 1}
+    BillboardMipmapBias: -2
+    BillboardWindSpeed: 1
+    BillboardSmoothness: 0.2
+    BillboardMetallic: 0.5
+    BillboardSpecular: 0
+    BillboardOcclusion: 1
+    BillboardNormalStrength: 1
+    BillboardShadowOffset: 2
+    BillboardRecalculateNormals: 0
+    BillboardNormalBlendFactor: 1
+    BillboardRenderMode: 1
+    BillboardFlipBackNormals: 0
+    BillboardFadeDistance: 5
+    UseBillboardFade: 1
+    OverrideShaderController: 0
+    UseBillboardSnow: 0
+    UseBillboardWind: 0
+    BillboardVersion: 2
+    UseHeightRule: 1
+    MinHeight: 0
+    MaxHeight: 1500
+    UseAdvancedHeightRule: 0
+    MaxCurveHeight: 500
+    HeightRuleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    UseSteepnessRule: 1
+    MinSteepness: 0
+    MaxSteepness: 30
+    UseAdvancedSteepnessRule: 0
+    SteepnessRuleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    UseNoiseCutoff: 0
+    NoiseCutoffValue: 0.5
+    NoiseCutoffScale: 5
+    NoiseCutoffInverse: 0
+    NoiseCutoffOffset: {x: 0, y: 0}
+    UseNoiseDensity: 1
+    NoiseDensityScale: 14
+    NoiseDensityInverse: 0
+    NoiseDensityOffset: {x: 6, y: 6}
+    UseNoiseScaleRule: 0
+    NoiseScaleMinScale: 0.7
+    NoiseScaleMaxScale: 1.3
+    NoiseScaleScale: 5
+    NoiseScaleInverse: 0
+    NoiseScaleOffset: {x: 0, y: 0}
+    UseBiomeEdgeScaleRule: 0
+    BiomeEdgeScaleDistance: 10
+    BiomeEdgeScaleMinScale: 0.3
+    BiomeEdgeScaleMaxScale: 1
+    BiomeEdgeScaleInverse: 0
+    UseBiomeEdgeIncludeRule: 0
+    BiomeEdgeIncludeDistance: 10
+    BiomeEdgeIncludeInverse: 0
+    UseConcaveLocationRule: 0
+    ConcaveLocationInverse: 0
+    ConcaveLoactionMinHeightDifference: 1
+    ConcaveLoactionDistance: 3
+    ConcaveLoactionAverage: 1
+    UseTerrainTextureIncludeRules: 0
+    TerrainTextureIncludeRuleList: []
+    UseTerrainTextureExcludeRules: 0
+    TerrainTextureExcludeRuleList: []
+    UseTextureMaskIncludeRules: 0
+    TextureMaskIncludeRuleList: []
+    UseTextureMaskExcludeRules: 0
+    TextureMaskExcludeRuleList: []
+    UseTextureMaskScaleRules: 0
+    TextureMaskScaleRuleList: []
+    UseTextureMaskDensityRules: 0
+    TextureMaskDensityRuleList: []
+    ShaderName: Universal Render Pipeline/Nature/SpeedTree7
+    ShaderControllerSettings:
+      ControlerPropertyList: []
+      Heading: 
+      Description: 
+      SupportsInstantIndirect: 0
+      LODFadeCrossfade: 0
+      LODFadePercentage: 0
+      SampleWind: 0
+      UpdateWind: 0
+      DynamicHUE: 0
+      BillboardSnow: 0
+      BillboardHDWind: 0
+      OverrideBillboardAtlasShader: 
+      OverrideBillboardAtlasNormalShader: 
+      BillboardRenderMode: 1
+    UseTerrainSourceIncludeRule: 0
+    TerrainSourceIncludeRule:
+      UseTerrainSourceID1: 0
+      UseTerrainSourceID2: 0
+      UseTerrainSourceID3: 0
+      UseTerrainSourceID4: 0
+      UseTerrainSourceID5: 0
+      UseTerrainSourceID6: 0
+      UseTerrainSourceID7: 0
+      UseTerrainSourceID8: 0
+    UseTerrainSourceExcludeRule: 0
+    TerrainSourceExcludeRule:
+      UseTerrainSourceID1: 0
+      UseTerrainSourceID2: 0
+      UseTerrainSourceID3: 0
+      UseTerrainSourceID4: 0
+      UseTerrainSourceID5: 0
+      UseTerrainSourceID6: 0
+      UseTerrainSourceID7: 0
+      UseTerrainSourceID8: 0
+    DisableLOD: 0
+    LODFactor: 1
+    UseDistanceFalloff: 0
+    DistanceFalloffStartDistance: 0.4
+    UseVegetationMask: 0
+    VegetationTypeIndex: 1
+    RuntimePrefabRuleList: []
+    EnableCrossFade: 0
+  TerrainTextureSettingsList: []
+  TerrainTextureList: []
+  TextureMaskGroupList: []
+  TerrainTextureCount: 0
+  BiomeType: 0
+  BiomeSortOrder: 1
+  GenerateBiomeSplamap: 1
